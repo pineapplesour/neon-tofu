@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네온 두부 — 시안 1 (Dark Neon)</title>
+<style>
+  :root{
+    --bg:#07070d; --panel:#0e0e18; --line:#22223a;
+    --tofu:#f8f5ec; --tofu-2:#e6e0d2;
+    --cyan:#5ef2ff; --mag:#ff5ecb; --lime:#c8ff5e;
+    --ink:#f2f0ff; --dim:#9a97b8;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:
+      radial-gradient(900px 500px at 12% -8%, rgba(94,242,255,.16), transparent 60%),
+      radial-gradient(700px 420px at 92% 4%, rgba(255,94,203,.14), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.66; letter-spacing:-.01em;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 72px}
+  header.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .mark{display:grid;grid-template-columns:12px 12px;grid-auto-rows:12px;gap:3px}
+  .mark i{display:block;border-radius:2px;background:var(--tofu)}
+  .mark i:nth-child(2){background:var(--cyan)}
+  .mark i:nth-child(3){background:var(--mag)}
+  .brand{font-size:19px;font-weight:800;letter-spacing:-.03em}
+  .brand span{color:var(--dim);font-weight:600}
+  .tag{margin-left:auto;font-size:11.5px;color:var(--dim);text-align:right;line-height:1.4}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:11.5px;font-weight:800;letter-spacing:.02em;
+    padding:5px 11px;border-radius:999px;
+    border:1px solid rgba(94,242,255,.45);color:var(--cyan);
+    background:rgba(94,242,255,.07);
+  }
+  .badge.m{border-color:rgba(255,94,203,.45);color:var(--mag);background:rgba(255,94,203,.07)}
+  .dot{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+  .hero{margin:0 0 30px}
+  .kicker{font-size:12px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px}
+  h1{font-size:27px;line-height:1.32;margin:0 0 12px;letter-spacing:-.035em;
+     text-shadow:0 0 26px rgba(94,242,255,.22)}
+  .meta{font-size:12.5px;color:var(--dim);margin:0 0 20px}
+  .tofu{
+    position:relative;border-radius:16px;padding:22px 20px;
+    background:linear-gradient(180deg,#fffdf7,var(--tofu) 42%,var(--tofu-2));
+    color:#15131a;box-shadow:0 14px 0 -4px #b9b2a1, 0 26px 60px -22px rgba(94,242,255,.5);
+  }
+  .tofu::after{content:"";position:absolute;inset:6px;border-radius:11px;border:1px solid rgba(21,19,26,.07)}
+  .tofu p{margin:0 0 13px;font-size:14.6px}
+  .tofu p:last-child{margin-bottom:0}
+  .tofu b{background:linear-gradient(transparent 62%, rgba(255,94,203,.45) 0);padding:0 1px}
+  h2.sec{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);
+         margin:34px 0 12px;display:flex;align-items:center;gap:10px}
+  h2.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+  ul.list{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  ul.list li a{
+    display:flex;gap:12px;align-items:baseline;text-decoration:none;color:var(--ink);
+    border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--panel);
+    transition:border-color .16s,transform .16s;
+  }
+  ul.list li a:hover{border-color:rgba(94,242,255,.5);transform:translateY(-1px)}
+  .ed{font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:6px;white-space:nowrap;
+      background:rgba(200,255,94,.12);color:var(--lime);border:1px solid rgba(200,255,94,.3)}
+  .ed.e{background:rgba(255,94,203,.12);color:var(--mag);border-color:rgba(255,94,203,.3)}
+  .date{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ttl{font-size:14px;font-weight:600}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+         font-size:11.5px;color:var(--dim);display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:520px){
+    h1{font-size:22px} .tofu{padding:18px 16px} .tag{width:100%;text-align:left;margin-left:0}
+    ul.list li a{flex-wrap:wrap;gap:6px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="mark"><i></i><i></i><i></i><i></i></div>
+    <div class="brand">네온 두부 <span>NEON TOFU</span></div>
+    <div class="tag">AI 최전선 소식을<br>하루 두 번, 요약 한 장으로</div>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">최신 호</p>
+    <span class="badge m"><span class="dot"></span>석간 · 2026-09-17 (목) 20:00</span>
+    <h1>차세대 모델 경쟁 재점화, 에이전트의 실제 결제 첫 신호</h1>
+    <p class="meta">지난 12시간 · 새 소식 12건 · 루머 4건 포함</p>
+    <div class="tofu">
+      <p>오늘 가장 큰 흐름은 <b>차세대 모델 라인업 경쟁이 다시 뜨거워졌다</b>는 점입니다. 여러 곳에서 성능 지표와 UI 단서가 동시에 나오며 “곧 나온다”는 관측이 힘을 얻었습니다. 다만 공식 발표가 아닌 관측·루머 단계라 확정으로 읽기엔 이릅니다.</p>
+      <p>두 번째 축은 <b>에이전트가 실제 결제·정산에 참여</b>했다는 보고입니다. 사람이 승인만 하고 결제는 에이전트가 수행하는 흐름이 실사용 사례로 올라왔고, 에이전트 전용 계정·한도 관리 도구 논의도 함께 늘었습니다.</p>
+      <p>마지막은 비용입니다. 소형 모델의 추론 단가가 빠르게 내려가며 온디바이스·저비용 파이프라인 전환이 가속되고 있습니다. 반면 벤치마크 신뢰성 논쟁과 보안 사고 소식도 이어져, <b>속도와 검증 사이 균형</b>이 이번 주 핵심 과제로 남았습니다.</p>
+    </div>
+  </section>
+
+  <h2 class="sec">지난 요약</h2>
+  <ul class="list">
+    <li><a href="#"><span class="ed">조간</span><span class="date">09-17 08:00</span><span class="ttl">오픈소스 추론 최적화 경쟁과 API 요금 인하 신호</span></a></li>
+    <li><a href="#"><span class="ed e">석간</span><span class="date">09-16 20:00</span><span class="ttl">멀티모달 에이전트의 실무 도입 사례 확대</span></a></li>
+    <li><a href="#"><span class="ed">조간</span><span class="date">09-16 08:00</span><span class="ttl">미확인 루머 정리 — 차기 모델 라인업 정황</span></a></li>
+    <li><a href="#"><span class="ed e">석간</span><span class="date">09-15 20:00</span><span class="ttl">추론 비용 하락과 온디바이스 전환 가속</span></a></li>
+    <li><a href="#"><span class="ed">조간</span><span class="date">09-15 08:00</span><span class="ttl">보안 사고와 모델 접근 통제 논의</span></a></li>
+    <li><a href="#"><span class="ed e">석간</span><span class="date">09-14 20:00</span><span class="ttl">에이전트 결제·정산 인프라 움직임</span></a></li>
+    <li><a href="#"><span class="ed">조간</span><span class="date">09-14 08:00</span><span class="ttl">벤치마크 신뢰성 논쟁 재부상</span></a></li>
+    <li><a href="#"><span class="ed e">석간</span><span class="date">09-13 20:00</span><span class="ttl">인프라 증설 경쟁과 전력 제약</span></a></li>
+  </ul>
+
+  <footer><span>시안 1 · Dark Neon</span><span>네온 두부 / Neon Tofu</span></footer>
+</div>
+</body>
+</html>

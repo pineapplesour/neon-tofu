@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네온 두부 — 아카이브에 묻기</title>
+<style>
+  :root{--paper:#fbf9f6;--ink:#16151a;--dim:#8b8679;--rule:#e2ddd2;--neon:#00d9c0;--user:#f1eee7}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);display:flex;flex-direction:column;
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.7;letter-spacing:-.012em}
+  header{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--rule);
+    background:rgba(251,249,246,.92);position:sticky;top:0;z-index:5}
+  .logo{display:grid;grid-template-columns:repeat(2,11px);grid-auto-rows:11px;gap:2px}
+  .logo i{background:var(--ink);border-radius:1px}
+  .logo i:nth-child(4){background:var(--neon)}
+  .ttl{font-weight:800;letter-spacing:-.04em}
+  .ttl small{display:block;font-size:10px;letter-spacing:.28em;color:var(--dim);font-weight:600}
+  .hact{margin-left:auto;display:flex;gap:8px;align-items:center;font-size:12px;color:var(--dim)}
+  .hact a{color:var(--dim);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:5px 11px}
+  .hact a:hover{border-color:var(--neon);color:var(--ink)}
+  .hact button{background:none;border:1px solid var(--rule);border-radius:999px;padding:5px 11px;font:inherit;
+    font-size:12px;color:var(--dim);cursor:pointer}
+  main{flex:1;overflow-y:auto;padding:22px 18px 10px}
+  .inner{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .msg{display:flex;gap:10px}
+  .msg .who{flex:0 0 26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:800;
+    background:var(--ink);color:#fff}
+  .msg.me .who{background:var(--user);color:var(--ink)}
+  .msg .bubble{flex:1;min-width:0}
+  .msg.me .bubble{background:var(--user);border-radius:12px;padding:10px 13px}
+  .msg.ai .bubble{padding:2px 0}
+  .bubble p{margin:0 0 10px}
+  .bubble p:last-child{margin-bottom:0}
+  .bubble h4{font-size:15px;margin:14px 0 6px}
+  .bubble ul{margin:0 0 10px;padding-left:20px}
+  .bubble code{background:#f1eee7;padding:1px 5px;border-radius:4px;font-size:13px}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+  .tool{font-size:11px;color:var(--dim);border:1px solid var(--rule);border-radius:999px;padding:3px 9px;background:#fff}
+  .empty{color:var(--dim);font-size:14px;text-align:center;padding:40px 0}
+  .empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:8px;letter-spacing:-.03em}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px}
+  .chip{font-size:12px;color:var(--dim);border:1px solid var(--rule);border-radius:999px;padding:6px 12px;
+    background:#fff;cursor:pointer}
+  .chip:hover{border-color:var(--neon);color:var(--ink)}
+  footer{padding:12px 18px 18px;border-top:1px solid var(--rule);background:rgba(251,249,246,.94)}
+  form{max-width:720px;margin:0 auto;display:flex;gap:8px;align-items:flex-end}
+  textarea{flex:1;resize:none;min-height:46px;max-height:160px;padding:12px 13px;border:1px solid var(--rule);
+    border-radius:12px;font:inherit;font-size:15px;background:#fff;outline:none}
+  textarea:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,217,192,.14)}
+  form button{padding:13px 18px;border:0;border-radius:12px;background:var(--ink);color:#fff;font:inherit;
+    font-weight:700;cursor:pointer}
+  form button:disabled{opacity:.5;cursor:default}
+  .hint{max-width:720px;margin:8px auto 0;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:10px}
+  .cursor{display:inline-block;width:7px;height:14px;background:var(--neon);vertical-align:-2px;animation:bl 1s steps(2) infinite}
+  @keyframes bl{50%{opacity:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><i></i><i></i><i></i><i></i></div>
+  <div class="ttl">네온 두부 <small>NEON TOFU</small></div>
+  <div class="hact">
+    <span id="status">대기</span>
+    <button id="reset" type="button">대화 초기화</button>
+    <a href="/logout">나가기</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="inner" id="log">
+    <div class="empty" id="empty">
+      <b>요약과 원문에 대해 물어보세요</b>
+      네온 두부가 모은 회차 요약과 수집 원문만 근거로 답합니다.<br>파일을 직접 열어 확인하고, 없는 내용은 없다고 말합니다.
+      <div class="chips">
+        <span class="chip">오늘 조간에서 제일 큰 소식은?</span>
+        <span class="chip">모델 출시 관련 소식만 모아줘</span>
+        <span class="chip">확인되지 않은 루머만 알려줘</span>
+        <span class="chip">어제 석간과 오늘 조간의 차이점은?</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <form id="f">
+    <textarea id="q" rows="1" placeholder="예: 지난 12시간 중 에이전트 관련 소식만 정리해줘"></textarea>
+    <button id="send" type="submit">보내기</button>
+  </form>
+  <div class="hint"><span id="meta">근거: summaries / raw</span><span>Enter 전송 · Shift+Enter 줄바꿈</span></div>
+</footer>
+
+<script>
+const log = document.getElementById('log');
+const empty = document.getElementById('empty');
+const q = document.getElementById('q');
+const send = document.getElementById('send');
+const statusEl = document.getElementById('status');
+const f = document.getElementById('f');
+const SKEY = 'neon_tofu_session';
+let session = localStorage.getItem(SKEY);
+if (!session) {
+  session = 's' + Math.random().toString(36).slice(2, 10);
+  localStorage.setItem(SKEY, session);
+}
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function md(s) {
+  let out = esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  const lines = out.split('\n');
+  let html = '', inUl = false;
+  const closeUl = () => { if (inUl) { html += '</ul>'; inUl = false; } };
+  for (const line of lines) {
+    const t = line.trim();
+    if (!t) { closeUl(); continue; }
+    let m = t.match(/^#{1,6}\s+(.*)$/);
+    if (m) { closeUl(); html += '<h4>' + m[1] + '</h4>'; continue; }
+    if (/^(-{3,}|\*{3,})$/.test(t)) { closeUl(); continue; }
+    m = t.match(/^\s*[-*]\s+(.*)$/);
+    if (m) { if (!inUl) { html += '<ul>'; inUl = true; } html += '<li>' + m[1] + '</li>'; continue; }
+    closeUl();
+    html += '<p>' + t + '</p>';
+  }
+  closeUl();
+  return html;
+}
+function addMsg(who, html) {
+  empty.style.display = 'none';
+  const div = document.createElement('div');
+  div.className = 'msg ' + (who === 'me' ? 'me' : 'ai');
+  div.innerHTML = '<div class="who">' + (who === 'me' ? '나' : '두부') + '</div><div class="bubble">' + html + '</div>';
+  log.appendChild(div);
+  div.scrollIntoView({block: 'end'});
+  return div.querySelector('.bubble');
+}
+async function loadHistory() {
+  try {
+    const r = await fetch('/api/history', {headers: {'X-Tofu-Session': session}});
+    if (!r.ok) return;
+    const rows = (await r.json()).rows || [];
+    for (const row of rows) { addMsg('me', md(row.q)); addMsg('ai', md(row.a)); }
+    if (rows.length) statusEl.textContent = rows.length + '개 대화 복원';
+  } catch (_) {}
+}
+let busy = false;
+async function ask(text) {
+  if (busy || !text.trim()) return;
+  busy = true; send.disabled = true; q.value = ''; q.style.height = 'auto';
+  addMsg('me', md(text));
+  const bubble = addMsg('ai', '<span class="cursor"></span>');
+  statusEl.textContent = '답변 중…';
+  let acc = '';
+  const toolsBar = document.createElement('div');
+  toolsBar.className = 'tools';
+  bubble.parentElement.insertBefore(toolsBar, bubble);
+  const render = () => { bubble.innerHTML = md(acc) || '<span class="cursor"></span>'; };
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: text, session})
+    });
+    if (r.status === 401) { location.href = '/'; return; }
+    if (!r.ok) { const e = await r.json().catch(() => ({})); acc = '오류: ' + (e.error || r.status); render(); return; }
+    const reader = r.body.getReader();
+    const dec = new TextDecoder();
+    let buf = '';
+    while (true) {
+      const {value, done} = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, {stream: true});
+      const lines = buf.split('\n');
+      buf = lines.pop();
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        let ev; try { ev = JSON.parse(line); } catch (_) { continue; }
+        if (ev.t === 'delta') { acc += ev.text; render(); }
+        else if (ev.t === 'tool' && ev.state === 'start') {
+          toolsBar.insertAdjacentHTML('beforeend', '<span class="tool">📄 ' + esc(ev.name) + '</span>');
+        }
+        else if (ev.t === 'error') { acc += '\n\n> ⚠️ ' + (ev.message || '오류'); render(); }
+        else if (ev.t === 'done') { statusEl.textContent = (ev.elapsed || 0) + '초'; }
+      }
+    }
+  } catch (e) {
+    acc += '\n\n> ⚠️ 연결 오류: ' + e;
+  } finally {
+    render();
+    busy = false; send.disabled = false; q.focus();
+  }
+}
+f.addEventListener('submit', e => { e.preventDefault(); ask(q.value); });
+q.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(q.value); }
+});
+q.addEventListener('input', () => { q.style.height = 'auto'; q.style.height = Math.min(q.scrollHeight, 160) + 'px'; });
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => ask(c.textContent)));
+document.getElementById('reset').addEventListener('click', () => {
+  session = 's' + Math.random().toString(36).slice(2, 10);
+  localStorage.setItem(SKEY, session);
+  log.querySelectorAll('.msg').forEach(n => n.remove());
+  empty.style.display = 'block';
+  statusEl.textContent = '새 대화';
+});
+loadHistory();
+</script>
+</body>
+</html>

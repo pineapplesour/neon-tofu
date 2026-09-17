@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네온 두부 — 시안 5 (Split View)</title>
+<style>
+  :root{
+    --bg:#eef0f6;--card:#ffffff;--ink:#191c26;--dim:#6c7286;--soft:#f4f5f9;
+    --mint:#12b98a;--grape:#6c5ce7;--line:#e3e6ef;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.7;letter-spacing:-.012em}
+  .wrap{max-width:1020px;margin:0 auto;padding:22px 16px 60px}
+  .hd{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--mint),var(--grape));
+    box-shadow:0 6px 16px -6px rgba(108,92,231,.55)}
+  .hd h1{margin:0;font-size:18px;font-weight:800;letter-spacing:-.03em}
+  .hd p{margin:1px 0 0;font-size:11.5px;color:var(--dim)}
+  .pill{margin-left:auto;font-size:11.5px;font-weight:700;color:#0a7a5c;background:#dff6ee;
+    border-radius:999px;padding:6px 12px}
+  .grid{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+  .panel{background:var(--card);border-radius:18px;border:1px solid var(--line);
+    box-shadow:0 10px 30px -22px rgba(25,28,38,.45)}
+  .side{padding:14px 12px}
+  .side .lbl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin:4px 8px 10px}
+  .item{display:flex;gap:10px;align-items:flex-start;padding:10px 10px;border-radius:12px;text-decoration:none;color:inherit}
+  .item:hover{background:var(--soft)}
+  .item.on{background:linear-gradient(135deg,#e7fbf3,#eeebff)}
+  .item.on .t{font-weight:800;color:#12131c}
+  .item .b{flex:0 0 auto;font-size:10px;font-weight:800;border-radius:6px;padding:2px 6px;margin-top:3px;
+    background:#e9ecf5;color:#5b6178}
+  .item.on .b{background:var(--grape);color:#fff}
+  .item .t{font-size:13px;font-weight:600;line-height:1.42;letter-spacing:-.02em}
+  .item .d{font-size:10.5px;color:var(--dim);margin-top:3px;font-variant-numeric:tabular-nums}
+  .main{padding:24px 26px 30px}
+  .kick{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.04em;
+    color:#0a7a5c;background:#dff6ee;border-radius:999px;padding:5px 11px}
+  .main h2{margin:14px 0 8px;font-size:clamp(21px,3.6vw,29px);line-height:1.34;letter-spacing:-.035em}
+  .meta{font-size:12px;color:var(--dim);padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .main p{margin:0 0 15px;font-size:14.8px}
+  .main p b{background:linear-gradient(transparent 58%, #cdf3e6 0);padding:0 1px}
+  .foot{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+  .chip{font-size:11.5px;color:var(--dim);background:var(--soft);border:1px solid var(--line);
+    border-radius:999px;padding:5px 11px}
+  .credit{margin-top:26px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  @media(max-width:760px){
+    .grid{grid-template-columns:1fr}
+    .main{padding:20px 18px 26px}
+    .side{max-height:236px;overflow:auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="logo"></div>
+    <div>
+      <h1>네온 두부</h1>
+      <p>Neon Tofu · 하루 두 번, 요약 한 장</p>
+    </div>
+    <span class="pill">석간 20:00 발행</span>
+  </div>
+
+  <div class="grid">
+    <div class="panel side">
+      <p class="lbl">지난 요약</p>
+      <a class="item on" href="#"><span class="b">석간</span><span><span class="t">차세대 모델 경쟁 재점화, 에이전트의 실제 결제 첫 신호</span><span class="d">09-17 20:00 · 최신</span></span></a>
+      <a class="item" href="#"><span class="b">조간</span><span><span class="t">오픈소스 추론 최적화 경쟁과 API 요금 인하 신호</span><span class="d">09-17 08:00</span></span></a>
+      <a class="item" href="#"><span class="b">석간</span><span><span class="t">멀티모달 에이전트의 실무 도입 사례 확대</span><span class="d">09-16 20:00</span></span></a>
+      <a class="item" href="#"><span class="b">조간</span><span><span class="t">미확인 루머 정리 — 차기 모델 라인업 정황</span><span class="d">09-16 08:00</span></span></a>
+      <a class="item" href="#"><span class="b">석간</span><span><span class="t">추론 비용 하락과 온디바이스 전환 가속</span><span class="d">09-15 20:00</span></span></a>
+      <a class="item" href="#"><span class="b">조간</span><span><span class="t">보안 사고와 모델 접근 통제 논의</span><span class="d">09-15 08:00</span></span></a>
+      <a class="item" href="#"><span class="b">석간</span><span><span class="t">에이전트 결제·정산 인프라 움직임</span><span class="d">09-14 20:00</span></span></a>
+    </div>
+
+    <div class="panel main">
+      <span class="kick">● 최신 · 석간</span>
+      <h2>차세대 모델 경쟁 재점화, 에이전트의 실제 결제 첫 신호</h2>
+      <div class="meta">2026-09-17 (목) 20:00 · 지난 12시간 · 새 소식 12건 · 루머 4건</div>
+      <p>오늘 가장 큰 흐름은 <b>차세대 모델 라인업 경쟁이 다시 뜨거워졌다</b>는 점입니다. 여러 곳에서 성능 지표와 UI 단서가 동시에 나오며 “곧 나온다”는 관측이 힘을 얻었습니다. 다만 공식 발표가 아닌 관측·루머 단계라 확정으로 읽기엔 이릅니다.</p>
+      <p>두 번째 축은 <b>에이전트가 실제 결제·정산에 참여</b>했다는 보고입니다. 사람이 승인만 하고 결제는 에이전트가 수행하는 흐름이 실사용 사례로 올라왔고, 에이전트 전용 계정·한도 관리 도구 논의도 함께 늘었습니다.</p>
+      <p>마지막은 비용입니다. 소형 모델의 추론 단가가 빠르게 내려가며 온디바이스·저비용 파이프라인 전환이 가속되고 있습니다. 반면 벤치마크 신뢰성 논쟁과 보안 사고 소식도 이어져, <b>속도와 검증 사이 균형</b>이 이번 주 핵심 과제로 남았습니다.</p>
+      <div class="foot">
+        <span class="chip">#모델경쟁</span><span class="chip">#에이전트결제</span><span class="chip">#추론비용</span><span class="chip">#보안</span>
+      </div>
+      <div class="credit"><span>시안 5 · Split View</span><span>네온 두부 / Neon Tofu</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

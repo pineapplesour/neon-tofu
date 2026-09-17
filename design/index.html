@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네온 두부 — 디자인 시안 5종</title>
+<style>
+  :root{--bg:#0d0d14;--card:#16161f;--line:#2a2a3a;--ink:#f0eef8;--dim:#918ea8;--cy:#5ef2ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#0d0d14,#101018 60%);color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.65;letter-spacing:-.012em}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 18px 70px}
+  .head{display:flex;align-items:center;gap:13px;margin-bottom:8px}
+  .logo{display:grid;grid-template-columns:12px 12px;grid-auto-rows:12px;gap:3px}
+  .logo i{background:#f8f5ec;border-radius:2px;display:block}
+  .logo i:nth-child(2){background:var(--cy)}
+  h1{font-size:24px;margin:0;letter-spacing:-.04em}
+  .sub{color:var(--dim);font-size:13px;margin:4px 0 26px}
+  .note{border:1px solid var(--line);background:#14141d;border-radius:12px;padding:13px 15px;
+    font-size:12.5px;color:var(--dim);margin-bottom:22px}
+  .note b{color:var(--ink)}
+  ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+  li a{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);
+    border:1px solid var(--line);background:var(--card);border-radius:14px;padding:15px 16px;
+    transition:border-color .16s,transform .16s}
+  li a:hover{border-color:rgba(94,242,255,.55);transform:translateY(-1px)}
+  .no{font-size:12px;font-weight:800;color:var(--cy);font-variant-numeric:tabular-nums;min-width:22px}
+  .txt{flex:1}
+  .nm{font-size:15px;font-weight:700}
+  .ds{font-size:12.5px;color:var(--dim);margin-top:3px}
+  .go{font-size:12px;color:var(--dim);white-space:nowrap}
+  footer{margin-top:30px;font-size:11.5px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="logo"><i></i><i></i><i></i><i></i></div>
+    <h1>네온 두부 · 디자인 시안</h1>
+  </div>
+  <p class="sub">Neon Tofu — 매일 08:00 / 20:00 발행, 요약 한 장 + 지난 요약 목록만 있는 사이트</p>
+
+  <div class="note">
+    <b>공통 내용</b>은 같습니다(최신 호 제목·3문단 요약·지난 요약 8건, 조간/석간 구분). <b>디자인만</b> 다르니
+    번호를 눌러 비교해 주세요. 모바일 폭에서도 확인해 보시는 걸 권합니다.
+  </div>
+
+  <ul>
+    <li><a href="/v1-neon.html"><span class="no">01</span><span class="txt"><span class="nm">Dark Neon 두부</span><span class="ds">검정 배경 + 네온 시안/마젠타 글로우, 두부 흰 블록 요약 카드. 이름값 하는 임팩트형.</span></span><span class="go">열기 →</span></a></li>
+    <li><a href="/v2-gallery.html"><span class="no">02</span><span class="txt"><span class="nm">White Gallery</span><span class="ds">흰 종이 배경, 큰 제목과 여백 중심. 첫 글자 드롭캡. 잡지 같은 정적·고급형.</span></span><span class="go">열기 →</span></a></li>
+    <li><a href="/v3-paper.html"><span class="no">03</span><span class="txt"><span class="nm">조간·석간 신문</span><span class="ds">신문 제호 + 괘선, 명조체, 2단 목록. 하루 두 번 발행 컨셉이 가장 잘 보이는 형식.</span></span><span class="go">열기 →</span></a></li>
+    <li><a href="/v4-terminal.html"><span class="no">04</span><span class="txt"><span class="nm">Terminal</span><span class="ds">모노스페이스 + 터미널 창, 로그처럼 정리된 목록. AI 개발자 취향의 다크형.</span></span><span class="go">열기 →</span></a></li>
+    <li><a href="/v5-split.html"><span class="no">05</span><span class="txt"><span class="nm">Split View (소프트)</span><span class="ds">왼쪽 지난 요약 목록 + 오른쪽 읽기 창. 밝고 부드러운 색, 가장 ‘앱’스러운 사용성.</span></span><span class="go">열기 →</span></a></li>
+  </ul>
+
+  <footer>네온 두부 / Neon Tofu · 디자인 시안 5종 · 2026-09-17</footer>
+</div>
+</body>
+</html>

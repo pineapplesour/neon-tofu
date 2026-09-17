@@ -1,0 +1,20 @@
+# 원문/상태는 공개하지 않는다 (수집 원문에는 사용자 대화가 들어 있다)
+data/raw/
+data/tofu_state.json
+chat/config.json
+chat/sessions/
+chat/transcripts/
+chat/pi-config/
+corpus/
+
+# 로컬 작업물
+work/
+backup/
+memory/
+__pycache__/
+*.pyc
+.venv/
+*.log
+
+# venv 심볼릭 링크
+/.venv
