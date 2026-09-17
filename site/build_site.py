@@ -154,6 +154,12 @@ def date_label(ed: dict) -> str:
     return f"{d.year}년 {d.month}월 {d.day}일 {word}".strip()
 
 
+def build_stamp() -> str:
+    """지금 보고 있는 페이지가 어느 빌드인지 눈으로 확인할 수 있게 한다(캐시 착시 방지)."""
+    now = datetime.now().astimezone()
+    return f"빌드 {now.strftime('%Y-%m-%d %H:%M')}"
+
+
 STYLE = """
   :root{--paper:#fbf9f6;--ink:#16151a;--dim:#8b8679;--rule:#e2ddd2;--neon:#00d9c0}
   *{box-sizing:border-box}
@@ -335,7 +341,7 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
         + "\n" + _lede(latest, "", latest=True)
         + "\n" + _list_block(editions, "", skip_key=latest["_key"], heading="지난 요약")
         + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
-          f'<span>{html.escape(date_label(latest))} · 최신 호</span></div>'
+          f'<span>{html.escape(date_label(latest))} · 최신 호 · {html.escape(build_stamp())}</span></div>'
     )
     (out_dir / "index.html").write_text(
         _page(f"네온 두부 — {latest.get('title','')}", "", index_inner, script=PAGER_JS),
@@ -345,7 +351,8 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
     list_inner = (
         _back("", "최신호 보기")
         + "\n" + _list_block(editions, "", heading=f"전체 회차 {len(editions)}개")
-        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>전체 목록</span></div>'
+        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
+          f'<span>전체 목록 · {html.escape(build_stamp())}</span></div>'
     )
     (out_dir / "list.html").write_text(
         _page("네온 두부 — 전체보기", "", list_inner, script=PAGER_JS), encoding="utf-8")
@@ -356,7 +363,7 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
                  + _lede(ed, "../", latest=False)
                  + "\n" + _list_block(editions, "../", skip_key=ed["_key"], heading="지난 요약")
                  + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
-                   f'<span>{html.escape(date_label(ed))}</span></div>')
+                   f'<span>{html.escape(date_label(ed))} · {html.escape(build_stamp())}</span></div>')
         (out_dir / "e" / f"{ed['_key']}.html").write_text(
             _page(f"네온 두부 — {ed.get('title','')}", "../", inner, script=PAGER_JS),
             encoding="utf-8")
