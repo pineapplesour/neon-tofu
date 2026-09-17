@@ -42,9 +42,21 @@ def normalize_markdown(text: str) -> str:
     out = text.replace("\r\n", "\n")
     out = re.sub(r"[ \t]*-{3,}[ \t]*", "\n\n---\n\n", out)
     out = re.sub(r"[ \t]*(#{2,6})[ \t]+", r"\n\n\1 ", out)
-    # 줄 중간에 붙은 "* 항목" 을 불릿 줄로 (굵게 표기 ** 는 건드리지 않는다)
-    out = re.sub(r"(?<!\*)[ \t]+\*[ \t]+(?!\*)", "\n* ", out)
-    out = re.sub(r"(?m)^[ \t]*\*[ \t]+(?!\*)", "* ", out)
+    # 줄 중간에 붙은 불릿을 줄로 분리한다.
+    #  - "* **굵은항목**" 처럼 별표 뒤에 바로 굵은 표기가 와도 불릿이므로 반드시 분리해야 한다(이전 버그).
+    #  - 굵은 표기 자체(" **text** ")는 별표 뒤에 공백이 없어 매칭되지 않는다.
+    out = re.sub(r"(?<!\*)[ \t]+\*[ \t]+", "\n* ", out)
+    # "- 불릿" 도 같은 이유로 분리한다. 단어 사이 하이픈(GPT-6, 10-11)은 공백이 없어 매칭되지 않는다.
+    out = re.sub(r"(?<![A-Za-z0-9])[ \t]+-[ \t]+(?=\S)", "\n- ", out)
+    out = re.sub(r"(?m)^[ \t]*\*[ \t]+", "* ", out)
+    # 번호로 시작하는 짧은 줄은 섹션 제목으로 승격 (예: "1. OpenAI (GPT-6 시리즈 / 요금제 개편 / 우회 차단)")
+    out = re.sub(
+        r"(?m)^(\d{1,2}\.)[ \t]+([^\n]{2,60}?)[ \t]*$",
+        lambda m: (f"\n## {m.group(1)} {m.group(2)}\n"
+                   if not m.group(2).rstrip().endswith((".", "다.", "요.", ":"))
+                   else m.group(0)),
+        out,
+    )
     out = re.sub(r"\n{3,}", "\n\n", out)
     return out.strip()
 
@@ -232,7 +244,7 @@ def _lede(ed: dict, root: str) -> str:
     return f"""  <div class="lede">
     <div class="edline">최신 호 · <b>{label}</b></div>
     <h1>{html.escape(ed.get('title') or '오늘의 AI 업데이트')}</h1>
-    <div class="dateline">{html.escape(when)} · {html.escape(fmt_window(ed))}</div>
+    <div class="dateline">{html.escape(when)}</div>
   </div>
   <div class="body">
 {md_to_html(ed.get('body',''))}

@@ -19,6 +19,8 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-/srv/first-light/cache/xdg-data}"
 export HOME="${FIRST_LIGHT_HOME:-/srv/first-light/cache/home}"
 mkdir -p "$CLOAKBROWSER_CACHE_DIR" "$XDG_CONFIG_HOME" "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$HOME"
 export TOFU_PI_BIN="${TOFU_PI_BIN:-/srv/first-light/bin/pi}"
+export GIT_TERMINAL_PROMPT=0
+export GH_CONFIG_DIR="${GH_CONFIG_DIR:-/srv/first-light/secrets/gh}"
 
 PY="${TOFU_PYTHON:-$DIR/.venv/bin/python}"
 if [ ! -x "$PY" ]; then PY="$(command -v python3)"; fi

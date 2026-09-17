@@ -63,6 +63,12 @@ BACKOFFS = (5, 10, 20, 30, 30, 30)
 
 TOFU_INSTRUCTION = """자세히 정리좀, 찌라시 빠짐없이 요약해줘. 이것만 봐도 배부른 알짜배기만 모았습니다라고 시작해줘.
 
+[출력 형식 — 반드시 지킬 것]
+- 한 줄에 여러 항목을 붙여 쓰지 말 것. 구분선, 제목, 불릿은 각각 자기 줄에 둔다.
+- 섹션 제목은 `## 1. 제목` 형식으로 그 줄에 단독으로 쓴다.
+- 항목은 `- 내용` 형식으로 줄바꿈해서 쓴다. (`*` 대신 `-` 사용)
+- 문단 사이는 빈 줄 하나로 구분한다.
+
 [출처 표기 금지 — 반드시 지킬 것]
 - '디스코드', '디코', 'Discord', 'devmode', 'Dev Mode', '서버', '채널', '대화 내용' 같은 말을 절대 쓰지 말 것.
 - 출처를 굳이 밝혀야 하면 'AI 커뮤니티'라고만 쓸 것.
@@ -229,6 +235,25 @@ def latest_raw_for_slot(slot: str) -> Path | None:
     return files[-1] if files else None
 
 
+def raw_window(raw_path: Path, fallback_end: datetime) -> tuple[datetime, datetime]:
+    """보존된 원문의 실제 수집 구간을 manifest 에서 읽는다."""
+    manifest = RAW_DIR / "manifest.jsonl"
+    if manifest.exists():
+        for line in reversed(manifest.read_text(encoding="utf-8").splitlines()):
+            try:
+                entry = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if entry.get("file") == raw_path.name:
+                try:
+                    start = datetime.fromisoformat(entry["window_start"])
+                    end = datetime.fromisoformat(entry.get("collected_at") or entry["window_start"])
+                    return start, end
+                except (KeyError, ValueError):
+                    break
+    return fallback_end - timedelta(hours=RECENT_HOURS), fallback_end
+
+
 # ── 2단계: 요약 생성 + 사이트 발행 ─────────────────────────────
 
 def stub_summary(chat: str, now: datetime, slot: str) -> str:
@@ -286,8 +311,9 @@ def derive_title(body: str, sched, stub: bool) -> tuple[str, str]:
     return heuristic_title(body), "heuristic"
 
 
-def make_edition(*, slot: str, now: datetime, chat: str, sched, stub: bool) -> dict:
-    window_start = now - timedelta(hours=RECENT_HOURS)
+def make_edition(*, slot: str, now: datetime, chat: str, sched, stub: bool,
+                 window: tuple[datetime, datetime] | None = None) -> dict:
+    window_start, window_end = window or (now - timedelta(hours=RECENT_HOURS), now)
     if stub:
         body = stub_summary(chat, now, slot)
     else:
@@ -314,7 +340,7 @@ def make_edition(*, slot: str, now: datetime, chat: str, sched, stub: bool) -> d
         "slot_label": SLOT_LABEL.get(slot, slot),
         "published_at": now.isoformat(),
         "window_start": window_start.isoformat(),
-        "window_end": now.isoformat(),
+        "window_end": window_end.isoformat(),
         "title": title,
         "body": body,
         "chars": len(body),
@@ -346,20 +372,20 @@ def git_publish(paths: list[Path], message: str) -> bool:
     for p in paths:
         p = Path(p)
         if p.exists():
-            rels.append(str(p.relative_to(ROOT)))
+            rels.append(str(p.relative_to(PROJECT)))
     if not rels:
         return False
-    subprocess.run(["git", "add", "--", *rels], cwd=ROOT, check=True)
-    diff = subprocess.run(["git", "diff", "--cached", "--quiet", "--", *rels], cwd=ROOT)
+    subprocess.run(["git", "add", "--", *rels], cwd=PROJECT, check=True)
+    diff = subprocess.run(["git", "diff", "--cached", "--quiet", "--", *rels], cwd=PROJECT)
     if diff.returncode == 0:
         LOG("[publish] 변경 없음 — 커밋 생략")
         return False
     subprocess.run(
         ["git", "-c", f"user.name={L.GIT_USER_NAME}", "-c", f"user.email={L.GIT_USER_EMAIL}",
          "commit", "-m", message, "--", *rels],
-        cwd=ROOT, check=True,
+        cwd=PROJECT, check=True,
     )
-    push = subprocess.run(["git", "push", "origin", "HEAD"], cwd=ROOT, capture_output=True, text=True)
+    push = subprocess.run(["git", "push", "origin", "HEAD"], cwd=PROJECT, capture_output=True, text=True)
     if push.returncode != 0:
         raise RuntimeError(f"git push 실패: {push.stderr.strip()[-400:]}")
     LOG("[publish] git push 완료")
@@ -385,7 +411,10 @@ def publish(*, slot: str, now: datetime, chat_file: str | None, sched,
     if not chat:
         raise RuntimeError("[publish] 원문이 비어 있습니다")
 
-    edition = make_edition(slot=slot, now=now, chat=chat, sched=sched, stub=stub)
+    edition = make_edition(
+        slot=slot, now=now, chat=chat, sched=sched, stub=stub,
+        window=raw_window(Path(raw_path), now) if chat_file is None else None,
+    )
     build_site()
 
     published = False
