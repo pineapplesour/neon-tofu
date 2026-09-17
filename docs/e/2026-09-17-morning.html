@@ -50,14 +50,11 @@
     border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:2px}
   .back{display:inline-block;margin:2px 0 0;font-size:12.5px;color:var(--dim);text-decoration:none}
   .back:hover{color:var(--neon)}
-  .pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:26px 0 0}
-  .pager button{font:inherit;font-size:13px;min-width:36px;padding:7px 10px;cursor:pointer;background:#fff;
-    color:var(--ink);border:1px solid var(--rule);border-radius:9px;font-variant-numeric:tabular-nums}
-  .pager button:hover{border-color:var(--neon)}
-  .pager button.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-  .allline{text-align:center;margin:18px 0 0;font-size:12.5px}
-  .allline a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
-  .allline a:hover{color:var(--ink);border-color:var(--ink)}
+  .pager{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:26px 0 0}
+  .pager button{font:inherit;font-size:13.5px;padding:0 1px;cursor:pointer;background:none;border:0;
+    color:var(--dim);font-variant-numeric:tabular-nums}
+  .pager button:hover{color:var(--ink)}
+  .pager button.on{color:var(--ink);font-weight:800;border-bottom:2px solid var(--neon)}
   .foot{margin-top:46px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   @media(max-width:520px){
     .wrap{padding:24px 16px 70px}
@@ -74,7 +71,7 @@
     <div class="name"><a href="../index.html">네온 두부</a><small>NEON TOFU</small></div>
     <div class="stamp">하루 두 번 · 조간(08시) / 석간(20시)<br>요약만 남긴 AI 뉴스</div>
   </div>
-  <a class="back" href="../index.html">← 최신 호</a>
+  <a class="back" href="../index.html">← 최신호 보기</a>
   <div class="lede">
     <div class="edline"><b>조간</b></div>
     <h1>OpenAI와 구글의 차세대 AI 모델 동향 및 중국계 루머 정리</h1>
@@ -114,7 +111,6 @@
     <li class="e" data-i="0"><a href="../e/2026-09-17-evening.html"><span class="t">OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지</span><span class="d">2026년 9월 17일 밤</span></a></li>
   </ol>
   <nav class="pager" id="pager" hidden></nav>
-  <p class="allline"><a href="../list.html">전체보기 →</a></p>
   <div class="foot"><span>네온 두부 / Neon Tofu</span><span>2026년 9월 17일 낮</span></div>
 </div>
 <script>

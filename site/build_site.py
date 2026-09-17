@@ -200,14 +200,11 @@ STYLE = """
     border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:2px}
   .back{display:inline-block;margin:2px 0 0;font-size:12.5px;color:var(--dim);text-decoration:none}
   .back:hover{color:var(--neon)}
-  .pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:26px 0 0}
-  .pager button{font:inherit;font-size:13px;min-width:36px;padding:7px 10px;cursor:pointer;background:#fff;
-    color:var(--ink);border:1px solid var(--rule);border-radius:9px;font-variant-numeric:tabular-nums}
-  .pager button:hover{border-color:var(--neon)}
-  .pager button.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-  .allline{text-align:center;margin:18px 0 0;font-size:12.5px}
-  .allline a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
-  .allline a:hover{color:var(--ink);border-color:var(--ink)}
+  .pager{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:26px 0 0}
+  .pager button{font:inherit;font-size:13.5px;padding:0 1px;cursor:pointer;background:none;border:0;
+    color:var(--dim);font-variant-numeric:tabular-nums}
+  .pager button:hover{color:var(--ink)}
+  .pager button.on{color:var(--ink);font-weight:800;border-bottom:2px solid var(--neon)}
   .foot{margin-top:46px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   @media(max-width:520px){
     .wrap{padding:24px 16px 70px}
@@ -257,14 +254,14 @@ def _lede(ed: dict, root: str, latest: bool = True) -> str:
   </div>"""
 
 
-def _back(root: str, label: str = "최신 호") -> str:
-    """회차/전체보기 페이지 상단의 화살표 링크."""
-    return f'  <a class="back" href="{root}index.html">← {label}</a>'
+def _back(root: str, label: str, target: str = "index.html") -> str:
+    """상단 화살표 링크. 최신 호에서는 '목록 보기', 옛 회차에서는 '최신호 보기'."""
+    return f'  <a class="back" href="{root}{target}">← {label}</a>'
 
 
 def _list_block(editions: list[dict], root: str, skip_key: str | None = None,
-                heading: str = "지난 요약", show_all_link: bool = True) -> str:
-    """목록 + 페이지네이션(+ 전체보기). 페이지 나누기는 클라이언트 스크립트가 담당한다."""
+                heading: str = "지난 요약") -> str:
+    """목록 + 페이지 번호. 페이지 나누기는 클라이언트 스크립트가 담당한다."""
     rows = []
     shown = [ed for ed in editions if not (skip_key and ed["_key"] == skip_key)]
     for i, ed in enumerate(shown):
@@ -276,13 +273,10 @@ def _list_block(editions: list[dict], root: str, skip_key: str | None = None,
         )
     if not rows:
         return ""
-    all_link = (f'\n  <p class="allline"><a href="{root}list.html">전체보기 →</a></p>'
-                if show_all_link else "")
     return ("  <div class=\"rule\"></div>\n"
             f"  <p class=\"secttl\">{heading}</p>\n"
             "  <ol class=\"past\" id=\"past\">\n" + "\n".join(rows) + "\n  </ol>\n"
-            "  <nav class=\"pager\" id=\"pager\" hidden></nav>"
-            + all_link)
+            "  <nav class=\"pager\" id=\"pager\" hidden></nav>")
 
 
 PAGER_JS = """<script>
@@ -335,11 +329,11 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
 
     latest = editions[0]
 
-    # 1) 최신 호 — 요약 + 그 아래 '지난 요약' 목록(5개씩) + 전체보기
+    # 1) 최신 호 — 위에 '← 목록 보기', 아래에 '지난 요약' 목록(5개씩)
     index_inner = (
-        _lede(latest, "", latest=True)
-        + "\n" + _list_block(editions, "", skip_key=latest["_key"],
-                             heading="지난 요약", show_all_link=True)
+        _back("", "목록 보기", "list.html")
+        + "\n" + _lede(latest, "", latest=True)
+        + "\n" + _list_block(editions, "", skip_key=latest["_key"], heading="지난 요약")
         + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
           f'<span>{html.escape(date_label(latest))} · 최신 호</span></div>'
     )
@@ -347,21 +341,20 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
         _page(f"네온 두부 — {latest.get('title','')}", "", index_inner, script=PAGER_JS),
         encoding="utf-8")
 
-    # 2) 전체보기 — 모든 회차를 5개씩
+    # 2) 목록(전체보기) — 위에 '← 최신호 보기', 모든 회차를 5개씩
     list_inner = (
-        _back("", "최신 호")
-        + "\n" + _list_block(editions, "", heading=f"전체 회차 {len(editions)}개", show_all_link=False)
-        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>전체보기</span></div>'
+        _back("", "최신호 보기")
+        + "\n" + _list_block(editions, "", heading=f"전체 회차 {len(editions)}개")
+        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>전체 목록</span></div>'
     )
     (out_dir / "list.html").write_text(
         _page("네온 두부 — 전체보기", "", list_inner, script=PAGER_JS), encoding="utf-8")
 
-    # 3) 회차 개별 페이지 — 위에 화살표(최신 호), 아래에 목록
+    # 3) 옛 회차 페이지 — 위에 '← 최신호 보기', 아래에 목록
     for ed in editions:
-        inner = (_back("../", "최신 호") + "\n"
+        inner = (_back("../", "최신호 보기") + "\n"
                  + _lede(ed, "../", latest=False)
-                 + "\n" + _list_block(editions, "../", skip_key=ed["_key"],
-                                      heading="지난 요약", show_all_link=True)
+                 + "\n" + _list_block(editions, "../", skip_key=ed["_key"], heading="지난 요약")
                  + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
                    f'<span>{html.escape(date_label(ed))}</span></div>')
         (out_dir / "e" / f"{ed['_key']}.html").write_text(
