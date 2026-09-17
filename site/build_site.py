@@ -194,22 +194,20 @@ STYLE = """
   ol.past .t{font-size:15px;font-weight:600;letter-spacing:-.02em}
   ol.past .d{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
   ol.past li a:hover .t{color:var(--neon)}
-  .nav{display:flex;gap:10px;align-items:center;margin:6px 0 0;font-size:12.5px}
-  .nav a{color:var(--dim);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:5px 12px;background:#fff}
-  .nav a:hover{border-color:var(--neon);color:var(--ink)}
-  .nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .cta{margin:40px 0 0;text-align:center}
-  .cta a{display:inline-block;font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;
-    border:1.5px solid var(--ink);border-radius:999px;padding:12px 26px}
-  .cta a:hover{background:var(--ink);color:#fff}
+  ol.past li.e .t::after{content:"석간";font-size:10px;font-weight:700;color:#fff;background:var(--ink);
+    border-radius:3px;padding:2px 5px;margin-left:8px;vertical-align:2px}
+  ol.past li.m .t::after{content:"조간";font-size:10px;font-weight:700;color:var(--neon);border:1px solid var(--neon);
+    border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:2px}
+  .back{display:inline-block;margin:2px 0 0;font-size:12.5px;color:var(--dim);text-decoration:none}
+  .back:hover{color:var(--neon)}
   .pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:26px 0 0}
   .pager button{font:inherit;font-size:13px;min-width:36px;padding:7px 10px;cursor:pointer;background:#fff;
     color:var(--ink);border:1px solid var(--rule);border-radius:9px;font-variant-numeric:tabular-nums}
   .pager button:hover{border-color:var(--neon)}
   .pager button.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-  .pagehead{text-align:left;padding:38px 0 6px}
-  .pagehead h1{margin:0;font-size:clamp(22px,4.6vw,30px)}
-  .pagehead .sub{margin-top:8px;font-size:12.5px;color:var(--dim)}
+  .allline{text-align:center;margin:18px 0 0;font-size:12.5px}
+  .allline a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
+  .allline a:hover{color:var(--ink);border-color:var(--ink)}
   .foot{margin-top:46px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   @media(max-width:520px){
     .wrap{padding:24px 16px 70px}
@@ -222,7 +220,7 @@ STYLE = """
 MASTHEAD = """  <div class="masthead">
     <div class="logo"><i></i><i></i><i></i><i></i></div>
     <div class="name"><a href="__ROOT__index.html">네온 두부</a><small>NEON TOFU</small></div>
-    <div class="stamp">하루 두 번 · 낮(08시) / 밤(20시)<br>요약만 남긴 AI 뉴스</div>
+    <div class="stamp">하루 두 번 · 조간(08시) / 석간(20시)<br>요약만 남긴 AI 뉴스</div>
   </div>"""
 
 
@@ -247,8 +245,8 @@ def _page(title: str, root: str, inner: str, script: str = "") -> str:
 
 
 def _lede(ed: dict, root: str, latest: bool = True) -> str:
-    word = SLOT_WORD.get(ed["slot"], "")
-    badge = f"최신 호 · <b>{word}</b>" if latest else f"<b>{word}</b>"
+    label = SLOT_LABEL.get(ed["slot"], ed["slot"])
+    badge = f"최신 호 · <b>{label}</b>" if latest else f"<b>{label}</b>"
     return f"""  <div class="lede">
     <div class="edline">{badge}</div>
     <h1>{html.escape(ed.get('title') or '오늘의 AI 업데이트')}</h1>
@@ -259,27 +257,32 @@ def _lede(ed: dict, root: str, latest: bool = True) -> str:
   </div>"""
 
 
-def _nav(root: str, here: str) -> str:
-    """here: 'latest' | 'list' | 'edition'"""
-    items = []
-    items.append(f'<a class="{"on" if here == "latest" else ""}" href="{root}index.html">최신 호</a>')
-    items.append(f'<a class="{"on" if here == "list" else ""}" href="{root}list.html">목록 보기</a>')
-    return '  <nav class="nav">' + "".join(items) + "</nav>"
+def _back(root: str, label: str = "최신 호") -> str:
+    """회차/전체보기 페이지 상단의 화살표 링크."""
+    return f'  <a class="back" href="{root}index.html">← {label}</a>'
 
 
-def _list_items(editions: list[dict], root: str) -> str:
-    """전체 목록을 한 번에 렌더하고, 페이지 나누기는 클라이언트 스크립트가 담당한다."""
+def _list_block(editions: list[dict], root: str, skip_key: str | None = None,
+                heading: str = "지난 요약", show_all_link: bool = True) -> str:
+    """목록 + 페이지네이션(+ 전체보기). 페이지 나누기는 클라이언트 스크립트가 담당한다."""
     rows = []
-    for i, ed in enumerate(editions):
+    shown = [ed for ed in editions if not (skip_key and ed["_key"] == skip_key)]
+    for i, ed in enumerate(shown):
+        cls = "e" if ed["slot"] == "evening" else "m"
         rows.append(
-            f'    <li data-i="{i}"><a href="{root}e/{ed["_key"]}.html">'
+            f'    <li class="{cls}" data-i="{i}"><a href="{root}e/{ed["_key"]}.html">'
             f'<span class="t">{html.escape(ed.get("title") or "요약")}</span>'
             f'<span class="d">{html.escape(date_label(ed))}</span></a></li>'
         )
     if not rows:
         return ""
-    return ("  <ol class=\"past\" id=\"past\">\n" + "\n".join(rows) + "\n  </ol>\n"
-            "  <nav class=\"pager\" id=\"pager\" hidden></nav>")
+    all_link = (f'\n  <p class="allline"><a href="{root}list.html">전체보기 →</a></p>'
+                if show_all_link else "")
+    return ("  <div class=\"rule\"></div>\n"
+            f"  <p class=\"secttl\">{heading}</p>\n"
+            "  <ol class=\"past\" id=\"past\">\n" + "\n".join(rows) + "\n  </ol>\n"
+            "  <nav class=\"pager\" id=\"pager\" hidden></nav>"
+            + all_link)
 
 
 PAGER_JS = """<script>
@@ -332,36 +335,38 @@ def build(editions_dir: Path, out_dir: Path) -> dict:
 
     latest = editions[0]
 
-    # 1) 최신 호 (표지) — 요약만. 목록은 여기에 붙이지 않고 전용 페이지로 보낸다.
+    # 1) 최신 호 — 요약 + 그 아래 '지난 요약' 목록(5개씩) + 전체보기
     index_inner = (
         _lede(latest, "", latest=True)
-        + '\n  <div class="cta"><a href="list.html">지난 요약 목록 보기</a></div>'
+        + "\n" + _list_block(editions, "", skip_key=latest["_key"],
+                             heading="지난 요약", show_all_link=True)
         + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
           f'<span>{html.escape(date_label(latest))} · 최신 호</span></div>'
     )
     (out_dir / "index.html").write_text(
-        _page(f"네온 두부 — {latest.get('title','')}", "", index_inner), encoding="utf-8")
+        _page(f"네온 두부 — {latest.get('title','')}", "", index_inner, script=PAGER_JS),
+        encoding="utf-8")
 
-    # 2) 목록 페이지 — 5개씩, 페이지 번호로 같은 화면에서 목록만 넘어간다.
+    # 2) 전체보기 — 모든 회차를 5개씩
     list_inner = (
-        _nav("", "list")
-        + '\n  <div class="pagehead"><h1>지난 요약</h1>'
-          f'<div class="sub">전체 {len(editions)}회차 · 5개씩 보기</div></div>'
-        + "\n  <div class=\"rule\"></div>\n"
-        + _list_items(editions, "")
-        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>목록</span></div>'
+        _back("", "최신 호")
+        + "\n" + _list_block(editions, "", heading=f"전체 회차 {len(editions)}개", show_all_link=False)
+        + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>전체보기</span></div>'
     )
     (out_dir / "list.html").write_text(
-        _page("네온 두부 — 지난 요약", "", list_inner, script=PAGER_JS), encoding="utf-8")
+        _page("네온 두부 — 전체보기", "", list_inner, script=PAGER_JS), encoding="utf-8")
 
-    # 3) 회차 개별 페이지 — 상단은 '최신 호' / '목록 보기' 링크만.
+    # 3) 회차 개별 페이지 — 위에 화살표(최신 호), 아래에 목록
     for ed in editions:
-        inner = (_nav("../", "edition") + "\n"
+        inner = (_back("../", "최신 호") + "\n"
                  + _lede(ed, "../", latest=False)
+                 + "\n" + _list_block(editions, "../", skip_key=ed["_key"],
+                                      heading="지난 요약", show_all_link=True)
                  + '\n  <div class="foot"><span>네온 두부 / Neon Tofu</span>'
                    f'<span>{html.escape(date_label(ed))}</span></div>')
         (out_dir / "e" / f"{ed['_key']}.html").write_text(
-            _page(f"네온 두부 — {ed.get('title','')}", "../", inner), encoding="utf-8")
+            _page(f"네온 두부 — {ed.get('title','')}", "../", inner, script=PAGER_JS),
+            encoding="utf-8")
 
     (out_dir / "editions.json").write_text(
         json.dumps(

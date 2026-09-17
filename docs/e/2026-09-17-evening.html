@@ -44,22 +44,20 @@
   ol.past .t{font-size:15px;font-weight:600;letter-spacing:-.02em}
   ol.past .d{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
   ol.past li a:hover .t{color:var(--neon)}
-  .nav{display:flex;gap:10px;align-items:center;margin:6px 0 0;font-size:12.5px}
-  .nav a{color:var(--dim);text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:5px 12px;background:#fff}
-  .nav a:hover{border-color:var(--neon);color:var(--ink)}
-  .nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .cta{margin:40px 0 0;text-align:center}
-  .cta a{display:inline-block;font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;
-    border:1.5px solid var(--ink);border-radius:999px;padding:12px 26px}
-  .cta a:hover{background:var(--ink);color:#fff}
+  ol.past li.e .t::after{content:"석간";font-size:10px;font-weight:700;color:#fff;background:var(--ink);
+    border-radius:3px;padding:2px 5px;margin-left:8px;vertical-align:2px}
+  ol.past li.m .t::after{content:"조간";font-size:10px;font-weight:700;color:var(--neon);border:1px solid var(--neon);
+    border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:2px}
+  .back{display:inline-block;margin:2px 0 0;font-size:12.5px;color:var(--dim);text-decoration:none}
+  .back:hover{color:var(--neon)}
   .pager{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:26px 0 0}
   .pager button{font:inherit;font-size:13px;min-width:36px;padding:7px 10px;cursor:pointer;background:#fff;
     color:var(--ink);border:1px solid var(--rule);border-radius:9px;font-variant-numeric:tabular-nums}
   .pager button:hover{border-color:var(--neon)}
   .pager button.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
-  .pagehead{text-align:left;padding:38px 0 6px}
-  .pagehead h1{margin:0;font-size:clamp(22px,4.6vw,30px)}
-  .pagehead .sub{margin-top:8px;font-size:12.5px;color:var(--dim)}
+  .allline{text-align:center;margin:18px 0 0;font-size:12.5px}
+  .allline a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
+  .allline a:hover{color:var(--ink);border-color:var(--ink)}
   .foot{margin-top:46px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   @media(max-width:520px){
     .wrap{padding:24px 16px 70px}
@@ -74,11 +72,11 @@
   <div class="masthead">
     <div class="logo"><i></i><i></i><i></i><i></i></div>
     <div class="name"><a href="../index.html">네온 두부</a><small>NEON TOFU</small></div>
-    <div class="stamp">하루 두 번 · 낮(08시) / 밤(20시)<br>요약만 남긴 AI 뉴스</div>
+    <div class="stamp">하루 두 번 · 조간(08시) / 석간(20시)<br>요약만 남긴 AI 뉴스</div>
   </div>
-  <nav class="nav"><a class="" href="../index.html">최신 호</a><a class="" href="../list.html">목록 보기</a></nav>
+  <a class="back" href="../index.html">← 최신 호</a>
   <div class="lede">
-    <div class="edline"><b>밤</b></div>
+    <div class="edline"><b>석간</b></div>
     <h1>OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지</h1>
     <div class="dateline">2026년 9월 17일 밤</div>
   </div>
@@ -121,8 +119,47 @@
 <li><strong>EA(유효적타주의) vs e/acc(가속주의):</strong> AI 개발 속도 조절을 주장하는 EA 진영과 가속주의자들 간의 정치적 대립 및 여론전이 격화되고 있습니다.</li>
 </ul>
   </div>
+  <div class="rule"></div>
+  <p class="secttl">지난 요약</p>
+  <ol class="past" id="past">
+    <li class="m" data-i="0"><a href="../e/2026-09-17-morning.html"><span class="t">OpenAI와 구글의 차세대 AI 모델 동향 및 중국계 루머 정리</span><span class="d">2026년 9월 17일 낮</span></a></li>
+  </ol>
+  <nav class="pager" id="pager" hidden></nav>
+  <p class="allline"><a href="../list.html">전체보기 →</a></p>
   <div class="foot"><span>네온 두부 / Neon Tofu</span><span>2026년 9월 17일 밤</span></div>
 </div>
-
+<script>
+(function () {
+  var PER = 5;
+  var ol = document.getElementById('past');
+  var pager = document.getElementById('pager');
+  if (!ol || !pager) return;
+  var items = Array.prototype.slice.call(ol.children);
+  if (items.length <= PER) return;
+  var pages = Math.ceil(items.length / PER);
+  var cur = 0;
+  function render() {
+    items.forEach(function (li, i) { li.hidden = Math.floor(i / PER) !== cur; });
+    Array.prototype.forEach.call(pager.children, function (b, i) {
+      b.className = (i === cur) ? 'on' : '';
+      b.setAttribute('aria-current', i === cur ? 'page' : 'false');
+    });
+    if (history.replaceState) history.replaceState(null, '', '#p' + (cur + 1));
+  }
+  for (var i = 0; i < pages; i++) {
+    (function (i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = String(i + 1);
+      b.addEventListener('click', function () { cur = i; render(); });
+      pager.appendChild(b);
+    })(i);
+  }
+  pager.hidden = false;
+  var m = location.hash.match(/^#p(\d+)$/);
+  if (m) { var n = parseInt(m[1], 10) - 1; if (n >= 0 && n < pages) cur = n; }
+  render();
+})();
+</script>
 </body>
 </html>
