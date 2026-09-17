@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-09-17",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-09-17T19:55:02.041863+09:00",
+    "window_start": "2026-09-17T07:05:02.139055+09:00",
+    "window_end": "2026-09-17T19:05:02.139055+09:00",
+    "title": "OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지",
+    "chars": 2196,
+    "source_chars": 177457,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-09-17",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-09-17T10:55:52.645558+09:00",
