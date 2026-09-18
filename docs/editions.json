@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-09-19",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-09-19T07:55:01.791650+09:00",
+    "window_start": "2026-09-18T19:05:01.610240+09:00",
+    "window_end": "2026-09-19T07:05:01.610240+09:00",
+    "title": "앤스로픽 신규 모델과 구글 및 중국계 주요 AI 최신 동향 요약",
+    "chars": 1607,
+    "source_chars": 179547,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-18",
     "slot": "evening",
     "slot_label": "석간",
