@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-09-18",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-09-18T19:55:01.858202+09:00",
+    "window_start": "2026-09-18T07:05:02.040275+09:00",
+    "window_end": "2026-09-18T19:05:02.040275+09:00",
+    "title": "주요 AI 모델 업데이트와 보안 이슈 및 개발 생태계 동향",
+    "chars": 708,
+    "source_chars": 163804,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-09-18",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-09-18T07:55:01.375928+09:00",
