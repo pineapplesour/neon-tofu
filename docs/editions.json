@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-09-19",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-09-19T19:55:01.530120+09:00",
+    "window_start": "2026-09-19T07:05:01.584944+09:00",
+    "window_end": "2026-09-19T19:05:01.584944+09:00",
+    "title": "앤스로픽 클로드 5점 2 및 구글 제미나이 4 시리즈 주요 AI 동향",
+    "chars": 1520,
+    "source_chars": 78277,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-09-19",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-09-19T07:55:01.791650+09:00",
