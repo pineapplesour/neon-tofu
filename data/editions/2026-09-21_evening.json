@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-21",
+  "slot": "evening",
+  "slot_label": "석간",
+  "published_at": "2026-09-21T19:55:01.617535+09:00",
+  "window_start": "2026-09-20T07:05:01.212787+09:00",
+  "window_end": "2026-09-20T19:05:01.212787+09:00",
+  "title": "주요 인공지능 모델 신제품 유출 일정과 성능 평가 및 팁 요약",
+  "body": "이것만 봐도 배부른 알짜배기만 모았습니다. ## 1. 신규 모델 유출 및 출시 일정 찌라시 - Anthropic Claude 5 라인업: Opus 5.2가 이틀 내 출시될 예정이라는 소문과 함께 Sonnet 5.5, Opus 5.5, Fable 5.5, Haiku 5, Claude Instant 5 등이 다음 주 일괄 공개될 수 있다는 유출 정황이 포착됨.\n- Claude NewSonnet: 현재 라우팅 테스트 중인 NewSonnet(Sonnet 5.2급)의 성능이 기존 Opus 5 수준에 육박한다는 평가가 나옴.\n- OpenAI 코드명 'bel': GPT-6 기반 코드명 'bel'이 Fable 5.1과 대등하거나 이를 넘어서는 성능을 보일 것으로 알려짐.\n- OpenAI 모델 파라미터 규모: Sol 모델은 약 3T, Fable은 약 4T, Astra는 약 5T 파라미터 규모로 추정됨.\n- Google Gemini 4 Pro: Arena AI 테스트 유출 건 중 일부는 실제 Gemini 4가 아닌 Astra 등의 타사 테스트 모델일 가능성이 제기됨. Gemini 4 Pro의 정식 출시일은 10월 15일로 거론됨.\n- Google Gemini 3.5 Pro: 다음 주 출시 가능성이 언급됨.\n- Qwen 4 & Qwen-Image 2.1: 이번 주 Qwen 4 출시가 예정되어 있으며, 이미지 생성 모델인 Qwen-Image 2.1이 공개됨.\n- Grok 4.7: 일부 헤비 유저 계정을 대상으로 테스트가 진행 중임.\n- StepFun 5 Preview: 80억 토큰을 $29에 제공하는 파격 플랜과 함께 Step 5 모델 출시를 준비 중임.\n- Kimi 3.1 및 Mimo: 샤오미의 RL 기반 Mimo 모델과 Kimi 3.1이 조만간 공개될 예정임. ## 2. 각 AI 모델별 성능 평가 및 실사용 이슈 - Gemini 3.8 Flash 결함: 툴 호출(Tool Calling) 버그가 심각하고 중요 세부사항을 자주 누락하며, 포스트 트레이닝 붕괴 현상으로 인해 베이스 모델처럼 무가공 텍스트를 출력하는 현상이 관찰됨.\n- OpenAI Astra vs Sol / Luna 리소스 소모: Astra는 Sol에 비해 리소스 소모가 최소 15배 이상 크며, 5시간 사용 제한이 단 몇 분 만에 소진되는 문제가 발생함. 이에 따라 상대적으로 저렴한 Luna를 실행기(Executor)로 쓰고 Astra/Sol을 기획자로 쓰는 서브에이전트 구성이 유행함.\n- DeepSeek V4.1 / V4.1 Flash: AI 커뮤니티드 시 전체 552B 파라미터 중 16B만 활성화되는 극단적인 희소성(Sparsity) 비율을 보여줌.\n- GLM 5.3 vs DeepSeek V4.1 Flash: GLM 5.3이 답변의 엄밀함은 앞서나 속도가 느리고, DS V4.1 Flash는 속도가 빠르지만 간혹 지능 저하 현상이 나타남.\n- Jev (분류 및 라우팅 모델): 프롬프트 라우팅 용도로 주목받고 있으나 비전 기능의 부재와 단순 분류기 한계로 인해 기대에 못 미친다는 평가와 유용하다는 평가가 대립함.\n- Gemma 팀의 방향성: 구글 Gemma 팀은 대형 모델보다는 온디바이스(On-device) 전용 모델 구축에 집중하고 있음. ## 3. 계정 혜택 및 인증 우회 꿀팁 찌라시 - Google AI Pro / Gemini Pro 저가 획득: 인도 Jio 프로모션을 활용하거나 학생 우회 경로를 통해 18개월 구독권을 $0.10 ~ $0.50 수준의 매우 저렴한 가격으로 구매할 수 있음.\n- Claude 및 ChatGPT 학생 인증(SheerID) 우회: 깨끗한 미국 주거용 IP(Residential Proxy) 환경에서 AI로 생성한 학교 포털 수업 시간표(Class Schedule PDF)와 합격 통지서를 제출하면 SheerID 학생 및 교사 인증을 우회할 수 있음.\n- Google Antigravity 패치: 레포지토리에 공유되었던 Antigravity의 BYOK 우회 구멍을 구글 측에서 패치함.\n- StepFun 무료 프로모션: 신규 가입 시 15일, 첫 API 호출 시 15일, 친구 초대 시 최대 45일이 추가되어 총 75일간 무료 혜택(Step Plan)을 이용할 수 있음. ## 4. AI 기술 발전 로드맵 전망 - 연도별 AI 발전 타임라인: 2023년 소비자 LLM 대중화 -> 2024년 멀티모달의 해 -> 2025년 에이전트 및 오픈소스의 해 -> 2026년 재귀적 자아 개선(Recursive Self Improvement)의 해 -> 2027년 AGI 달성 -> 2028년 ASI(초인공지능) 도달 전망.",
+  "chars": 2260,
+  "source_chars": 106618,
+  "title_method": "llm",
+  "brand": "네온 두부"
+}
