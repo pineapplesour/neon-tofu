@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-09-23",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-09-23T07:55:01.972063+09:00",
+    "window_start": "2026-09-22T19:05:02.089407+09:00",
+    "window_end": "2026-09-23T07:05:02.089407+09:00",
+    "title": "오픈에이아이 신형 지피티6 출시와 앤트로픽 오푸스 5.5 맞대응 동향",
+    "chars": 655,
+    "source_chars": 146943,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-22",
     "slot": "evening",
     "slot_label": "석간",
