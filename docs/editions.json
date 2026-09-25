@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-09-26",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-09-26T07:55:01.246768+09:00",
+    "window_start": "2026-09-25T19:05:02.100659+09:00",
+    "window_end": "2026-09-26T07:05:02.100659+09:00",
+    "title": "앤트로픽과 오픈에이아이의 차세대 인공지능 모델 출시 및 기업 전략 동향",
+    "chars": 1002,
+    "source_chars": 248320,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-25",
     "slot": "evening",
     "slot_label": "석간",
