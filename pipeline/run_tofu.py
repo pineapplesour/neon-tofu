@@ -89,6 +89,9 @@ def _deadline_left() -> float | None:
     return LLM_BUDGET_SECONDS - (time.time() - _BUDGET["started"])
 
 
+LLM_MAX_OUTPUT_TOKENS = 32768  # MAX_TOKENS 재시도 상한 (thinking 토큰 포함)
+
+
 def call_gemma_budgeted(prompt, sched, max_tok=8192, temp=0.5, json_mode=False,
                         max_attempts=None, model=None, thinking_level=None):
     """legacy call_gemma 대체 — 벽시계 예산 + 429 키 서킷브레이커."""
@@ -145,18 +148,32 @@ def call_gemma_budgeted(prompt, sched, max_tok=8192, temp=0.5, json_mode=False,
             time.sleep(BACKOFFS[min(attempt, len(BACKOFFS) - 1)])
             continue
         try:
-            parts = r.json()["candidates"][0]["content"]["parts"]
-            for p in parts:
-                if p.get("thought"):
-                    continue
-                t = p.get("text", "")
-                if t:
-                    return t
-            time.sleep(2)
-            continue
+            data = r.json()
+            cand = data["candidates"][0]
+            parts = cand.get("content", {}).get("parts", [])
         except Exception:
             time.sleep(2)
             continue
+        # 텍스트 part 가 여러 개로 나뉘어 올 수 있다 — 첫 part 만 쓰면 뒷부분이 잘린다
+        text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+        finish = cand.get("finishReason", "")
+        usage = data.get("usageMetadata", {})
+        LOG(f"  [{selected_model}] finish={finish or '?'} "
+            f"thoughts={usage.get('thoughtsTokenCount', 0)} out={usage.get('candidatesTokenCount', 0)} "
+            f"max={gen_cfg['maxOutputTokens']} chars={len(text)}")
+        if finish and finish != "STOP":
+            # 잘린 응답은 성공으로 치지 않는다 (2026-09-26 조간 '3. Google (' 절단 사고)
+            if finish == "MAX_TOKENS":
+                gen_cfg["maxOutputTokens"] = min(gen_cfg["maxOutputTokens"] * 2, LLM_MAX_OUTPUT_TOKENS)
+                LOG(f"  MAX_TOKENS → maxOutputTokens {gen_cfg['maxOutputTokens']} 로 재시도")
+            else:
+                LOG(f"  비정상 종료({finish}) → 재시도")
+            time.sleep(2)
+            continue
+        if text:
+            return text
+        time.sleep(2)
+        continue
     raise RuntimeError(f"API failed after {attempts} attempts ({selected_model})")
 
 
