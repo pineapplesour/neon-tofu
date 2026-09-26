@@ -328,15 +328,43 @@ def derive_title(body: str, sched, stub: bool) -> tuple[str, str]:
     return heuristic_title(body), "heuristic"
 
 
+TRUNCATION_RETRIES = 2
+
+
+def truncation_reason(body: str) -> str:
+    """발행 전 마지막 방어선 — 잘린 본문이면 사유, 정상이면 빈 문자열.
+    (2026-09-26 조간이 '## 3. Google (' 에서 끊긴 채 발행된 사고 재발 방지)"""
+    text = (body or "").strip()
+    if not text:
+        return "빈 본문"
+    last = text.splitlines()[-1].strip()
+    if last.startswith("#"):
+        return f"제목으로 끝남: {last[:40]!r}"
+    if last[-1] in "([{<,:·-–—/":
+        return f"미완결 문자로 끝남: {last[-30:]!r}"
+    if last.count("(") > last.count(")") or last.count("[") > last.count("]"):
+        return f"괄호 미닫힘: {last[-30:]!r}"
+    if last.count("**") % 2:
+        return f"굵게 표시 미닫힘: {last[-30:]!r}"
+    return ""
+
+
 def make_edition(*, slot: str, now: datetime, chat: str, sched, stub: bool,
                  window: tuple[datetime, datetime] | None = None) -> dict:
     window_start, window_end = window or (now - timedelta(hours=RECENT_HOURS), now)
     if stub:
         body = stub_summary(chat, now, slot)
     else:
-        body = L.summarize_model_focus_source(
-            chat, sched, source_label=f"최신 {RECENT_HOURS}시간 자료"
-        )
+        for attempt in range(1 + TRUNCATION_RETRIES):
+            body = L.summarize_model_focus_source(
+                chat, sched, source_label=f"최신 {RECENT_HOURS}시간 자료"
+            )
+            reason = truncation_reason(body)
+            if not reason:
+                break
+            LOG(f"[publish] 본문 절단 의심({reason}) — 재생성 {attempt + 1}/{TRUNCATION_RETRIES}")
+        else:
+            raise RuntimeError(f"요약 본문이 계속 잘려서 발행 중단({reason})")
     if not body or len(body.strip()) < 40:
         raise RuntimeError("요약 생성 실패(빈 본문)")
 
