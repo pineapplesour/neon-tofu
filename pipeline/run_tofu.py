@@ -437,7 +437,7 @@ def publish(*, slot: str, now: datetime, chat_file: str | None, sched,
     published = False
     if do_publish:
         published = git_publish(
-            [SITE_OUT / "index.html", SITE_OUT / "editions.json", SITE_OUT / "e", EDITIONS_DIR],
+            [SITE_OUT / "index.html", SITE_OUT / "list.html", SITE_OUT / "editions.json", SITE_OUT / "e", EDITIONS_DIR],
             f"chore: publish {TOFU_BRAND} {edition['date']} {SLOT_LABEL.get(slot, slot)}",
         )
     state = load_tofu_state()
