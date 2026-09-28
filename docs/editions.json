@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-09-29",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-09-29T07:55:01.321822+09:00",
+    "window_start": "2026-09-28T19:05:02.015740+09:00",
+    "window_end": "2026-09-29T07:05:02.015740+09:00",
+    "title": "앤트로픽 클로드 5.5 기습 출시 및 주요 AI 기업 최신 동향 요약",
+    "chars": 2283,
+    "source_chars": 356005,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-28",
     "slot": "evening",
     "slot_label": "석간",
