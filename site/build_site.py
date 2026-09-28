@@ -216,7 +216,8 @@ STYLE = """
     .wrap{padding:24px 16px 70px}
     ol.past li a{grid-template-columns:28px 1fr;gap:10px}
     ol.past .d{grid-column:2;text-align:left}
-    .stamp{display:none}
+    .masthead{flex-wrap:wrap;row-gap:8px}
+    .stamp{flex-basis:100%;margin-left:0;text-align:left}
   }
 """
 
