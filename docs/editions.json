@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-09-29",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-09-29T19:55:01.185638+09:00",
+    "window_start": "2026-09-29T07:05:02.095487+09:00",
+    "window_end": "2026-09-29T19:05:02.095487+09:00",
+    "title": "오픈에이아이 신형 모델 출시 취소와 요금제 개편 논란 및 AI 업계 동향",
+    "chars": 834,
+    "source_chars": 262787,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-09-29",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-09-29T07:55:01.321822+09:00",
