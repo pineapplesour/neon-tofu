@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-09-30",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-09-30T07:55:01.590138+09:00",
+    "window_start": "2026-09-29T19:05:01.974241+09:00",
+    "window_end": "2026-09-30T07:05:01.974241+09:00",
+    "title": "오픈에이아이 신모델 공개와 구독제 개편 및 업계 반응",
+    "chars": 850,
+    "source_chars": 441833,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-29",
     "slot": "evening",
     "slot_label": "석간",
