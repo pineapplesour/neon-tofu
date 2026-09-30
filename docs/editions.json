@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-01",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-01T07:55:01.732786+09:00",
+    "window_start": "2026-09-30T19:05:01.904712+09:00",
+    "window_end": "2026-10-01T07:05:01.904712+09:00",
+    "title": "2026년 하반기 주요 AI 모델 동향과 업계 판도 분석",
+    "chars": 975,
+    "source_chars": 275613,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-09-30",
     "slot": "evening",
     "slot_label": "석간",
