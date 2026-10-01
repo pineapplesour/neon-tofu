@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-02",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-02T07:55:01.324369+09:00",
+    "window_start": "2026-10-01T19:05:01.960598+09:00",
+    "window_end": "2026-10-02T07:05:01.960598+09:00",
+    "title": "구글 제미나이 4 유출과 주요 AI 랩스 최신 동향 요약",
+    "chars": 1994,
+    "source_chars": 230076,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-01",
     "slot": "evening",
     "slot_label": "석간",
