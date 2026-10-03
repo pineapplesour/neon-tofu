@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-03",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-03T19:55:02.009825+09:00",
+    "window_start": "2026-10-03T07:05:01.203938+09:00",
+    "window_end": "2026-10-03T19:05:01.203938+09:00",
+    "title": "주요 LLM 성능 비교와 구글 제미나이 요금제 개편 및 AI 업계 동향",
+    "chars": 2095,
+    "source_chars": 174223,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-03",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-03T07:55:02.027527+09:00",
