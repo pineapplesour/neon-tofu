@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-05",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-05T19:55:01.639137+09:00",
+    "window_start": "2026-10-05T07:05:02.122586+09:00",
+    "window_end": "2026-10-05T19:05:02.122586+09:00",
+    "title": "오픈에이아이 앤트로픽 구글의 주요 모델 출시 및 정책 동향",
+    "chars": 2075,
+    "source_chars": 178093,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-05",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-05T07:55:01.511974+09:00",
