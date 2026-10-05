@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-06",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-06T07:55:01.544446+09:00",
+    "window_start": "2026-10-05T19:05:02.087110+09:00",
+    "window_end": "2026-10-06T07:05:02.087110+09:00",
+    "title": "구글 앤트로픽 오픈AI 주요 AI 모델 업데이트 및 시장 동향",
+    "chars": 1336,
+    "source_chars": 200733,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-05",
     "slot": "evening",
     "slot_label": "석간",
