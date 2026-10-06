@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-07",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-07T07:55:02.080254+09:00",
+    "window_start": "2026-10-06T19:05:01.779138+09:00",
+    "window_end": "2026-10-07T07:05:01.779138+09:00",
+    "title": "구글 앤트로픽 오픈AI 미스트랄 주요 AI 모델 신제품 및 업계 동향 요약",
+    "chars": 2224,
+    "source_chars": 312737,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-06",
     "slot": "evening",
     "slot_label": "석간",
