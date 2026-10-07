@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-08",
+  "slot": "morning",
+  "slot_label": "조간",
+  "published_at": "2026-10-08T07:55:01.383208+09:00",
+  "window_start": "2026-10-07T19:05:01.822268+09:00",
+  "window_end": "2026-10-08T07:05:01.822268+09:00",
+  "title": "구글 제미나이 아르고과 앤트로픽 클로드 하이쿠 등 주요 AI 동향",
+  "body": "이것만 봐도 배부른 알짜배기만 모았습니다. ## 1. 구글 (Gemini 4 Argon & 신규 서비스) - Gemini 4 Argon 모델의 기습 출시 소문과 함께 가짜 유출 스크린샷(Muse AI 생성 및 GPT 번역본)이 AI 커뮤니티를 교란함 - 구글 클라우드 SKU 목록에서 `argon` 및 `cyber-permissive` 관련 항목이 실제로 포착되며 출시가 임박했음이 확인됨 - 코딩 없이 설명만으로 맞춤형 게임을 제작하고 공유할 수 있는 실험적 플랫폼 'Playground' (labs.google.com/playground) 전격 공개 - Unity Spark 및 Google Play Games 연동을 통해 AI 기반 게임 생성 생태계 구축 추진 - Gemini 4 Argon은 약 15%의 환각률을 보이며 Ultra 요금제 및 CVP 파트너에게 우선 제공될 가능성 제기 ## 2. 앤트로픽 (Claude Haiku 5.5 공개 & 구독자 혜택) - Claude Haiku 5.5 모델 공식 출시 (1M 컨텍스트 윈도우, 128k 최대 출력 토큰, 적응형 추론 지원) - Haiku 5.5 가격 책정: 100k 토큰 이하 기준 입력 $0.10 / 출력 $0.50 (100k 초과 시 입력 $0.50 / 출력 $2.50) - Claude Max 및 Team 유료 구독자 대상 월별 API 크레딧 제공 발표 (Max 5x: $100, Max 20x: $200, Team: 최대 $500) - Claude Sonnet 5.5의 캐시 읽기 비용 50% 인하 ($0.10/1M 토큰) - HackerOne 등 검증된 보안 연구원 대상 가드레일이 완화된 'Mythos 5.1 (Defense Access)' 프로그램 운영 확인 - 차세대 고성능 모델인 Fable 5.5 및 Fable 6의 10월 중순~하순 출시 루머 확산 ## 3. 오픈AI (GPT-6 시리즈 & 신규 기능) - GPT-6.1 Sol, Luna, Astra 등 차세대 라인업의 성능 및 토큰 소비 효율성 비교 활성화 - 일반 웹 챗에 GPT-6 Sol 모델이 일부 적용되었으나 기존 코드를 대량 삭제하는 등 불안정한 모습 관찰 - 수학적 난제 722개를 해결한 연구 논문 집합 기습 발표 - 텍스트 응답을 넘어 시각적·상호작용 요소를 강화한 'GPT Intelligent UI' 도입 준비 소식 ## 4. xAI, DeepSeek 및 기타 LLM 동향 - xAI가 Cursor를 인수했음에도 Grok 4.7의 성과가 기대에 미치지 못하자 Grok Bot의 백엔드를 Claude Opus 5.5로 교체 - DeepSeek V4.1 Flash 및 V5 개발 소식과 함께 가성비 및 사이버 보안 관련 작업에서의 뛰어난 성능 주목 - Qwen 4를 비롯한 중국계 AI 기업들의 10조(10T) 매개변수 규모 초대형 모델 개발 추진 소식 ## 5. 하드웨어, 게임 및 기타 IT 찌라시 - 마이크로소프트, Nvidia CPU/GPU 및 고용량 통합 메모리를 탑재한 Surface Laptop Ultra 발표 (로컬 AI 처리 특화) - Halo 3 디컴파일 프로젝트(Halo 3 Reclaimer)가 MCC 공식 파일을 활용해 마이크로소프트의 법적 제재를 회피하며 128인 멀티플레이 구현 성공 - NovelAI의 애니메이션 스타일 이미지 생성 성능이 현존 최상위급이라는 사용자 평가 쇄도",
+  "chars": 1656,
+  "source_chars": 286527,
+  "title_method": "llm",
+  "brand": "네온 두부"
+}
