@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-09",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-09T07:55:02.032878+09:00",
+    "window_start": "2026-10-08T19:05:01.616161+09:00",
+    "window_end": "2026-10-09T07:05:01.616161+09:00",
+    "title": "구글 제미나이 4 아르곤 출시 루머와 주요 AI 모델 최신 동향",
+    "chars": 1673,
+    "source_chars": 253852,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-08",
     "slot": "evening",
     "slot_label": "석간",
