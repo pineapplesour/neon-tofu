@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-10",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-10T19:55:01.643079+09:00",
+    "window_start": "2026-10-10T07:05:01.494781+09:00",
+    "window_end": "2026-10-10T19:05:01.494781+09:00",
+    "title": "주요 AI 기업 신모델 개발 동향 및 커뮤니티 소식 요약",
+    "chars": 2458,
+    "source_chars": 118633,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-10",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-10T07:55:01.796730+09:00",
