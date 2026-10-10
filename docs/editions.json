@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-11",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-11T07:55:01.826830+09:00",
+    "window_start": "2026-10-10T19:05:01.282737+09:00",
+    "window_end": "2026-10-11T07:05:01.282737+09:00",
+    "title": "오픈에이아이 구글 앤트로픽 주요 인공지능 모델 및 하드웨어 동향 요약",
+    "chars": 952,
+    "source_chars": 220489,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-10",
     "slot": "evening",
     "slot_label": "석간",
