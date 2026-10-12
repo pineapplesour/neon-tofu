@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-12",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-12T19:55:01.532703+09:00",
+    "window_start": "2026-10-12T07:05:01.844721+09:00",
+    "window_end": "2026-10-12T19:05:01.844721+09:00",
+    "title": "최신 AI 모델 스텔스 테스트와 유출 소식 및 개발자 트렌드 요약",
+    "chars": 1891,
+    "source_chars": 176895,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-12",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-12T07:55:01.465800+09:00",
