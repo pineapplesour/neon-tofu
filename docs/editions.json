@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-13",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-13T18:55:02.124308+09:00",
+    "window_start": "2026-10-13T06:05:02.043512+09:00",
+    "window_end": "2026-10-13T18:05:02.043512+09:00",
+    "title": "구글 제미니 4.0 출시 임박 및 주요 AI 모델 동향",
+    "chars": 639,
+    "source_chars": 313791,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-13",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-13T06:55:01.606203+09:00",
