@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-15",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-15T18:55:01.834769+09:00",
+    "window_start": "2026-10-15T06:05:02.021132+09:00",
+    "window_end": "2026-10-15T18:05:02.021132+09:00",
+    "title": "차세대 AI 모델 동향과 우주 데이터센터 및 개발 최적화 팁",
+    "chars": 2320,
+    "source_chars": 204645,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-15",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-15T06:55:02.018528+09:00",
