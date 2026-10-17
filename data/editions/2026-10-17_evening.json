@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-17",
+  "slot": "evening",
+  "slot_label": "석간",
+  "published_at": "2026-10-17T18:55:01.949766+09:00",
+  "window_start": "2026-10-17T06:05:01.394197+09:00",
+  "window_end": "2026-10-17T18:05:01.394197+09:00",
+  "title": "앤스로픽 구글 딥시크 최신 모델 동향과 인공지능 업계 주요 소식",
+  "body": "이것만 봐도 배부른 알짜배기만 모았습니다. ## 1. Anthropic 및 Claude 시리즈 동향 - Anthropic 내부 분위기 급변: 2030년 GDP 17% 성장 전망 및 단기 내 초인공지능(ASI) 도달 가능성에 대한 내부 확신이 매우 강해짐. - Fable 5.5 및 사용량 리셋 소식: 다음 주 화요일 Fable 5.5 관련 소식과 함께 사용량 리셋(Banked Reset)이 제공될 것이라는 유출 및 언급 발생. - Opus 5.5 및 Claude Code 특징: 코딩과 3D/SVG 그래픽 생성에서 여전히 독보적인 성능을 보이며, Claude Code 환경에서는 웹 버전과 달리 저작권 제약 없이 동작함. - 웹 가드레일 및 압축 업데이트: 대화 입력을 gzip으로 압축해 모델 전달 속도를 높였으며, 가드레일 오작동 시 세션을 즉시 차단하지 않고 모델에 경고를 먼저 전달하도록 시스템 개선. ## 2. Google Gemini 시리즈 (Argon, Astra, Sol) - Gemini 4 Argon 출시 및 AI Studio 전격 개방: AI Studio Pro 플랜 및 Perplexity Pro/Max에 Argon이 추가되었으며, WANDR 벤치마크 신기록을 경신함. - Argon의 강점과 한계: 글쓰기, 문장력, 페르소나, 사이버 보안 및 개념 설명 능력은 극찬받고 있으나, 코딩 및 단순 UI 디자인에서는 반응 속도가 느리고 사용량 제한(일일 10회 수준)이 엄격함. - Astra 6.1 및 Sol 6.1: 수학, 머신러닝, 과학 및 STEM 분야에서 Opus 대비 적은 토큰으로 뛰어난 추론 성능을 보이지만, 디자인 및 미적 감각은 부족하다는 평가. - 계정 제재 및 RSI 논쟁: Google DeepMind의 자가 개선(RSI) 달성 주장에 대한 논쟁과 함께, 우회 등록된 Jio 및 프로모션 계정에 대한 대규모 제재가 시작됨. ## 3. DeepSeek 및 중국계 AI 모델 동향 - DeepSeek V4.1 Flash (1017 스냅샷) 포착: 공식 API에 5,520억(552B) 파라미터 규모의 V4.1 Flash 스냅샷이 일시 등장했으며, Astra 및 Claude 기반의 증류(Distillation) 및 3D RL이 적용되어 가성비($0.3/$1.2)가 매우 뛰어남. - AI 증류(Distillation) 경쟁: 중국계 모델들이 Claude와 Google 최신 모델의 추론 트레이스를 대량 학습하여 성능을 격상시키는 현상이 지속됨. - GLM 5.3 Flash 및 OpenCode: OpenCode에서 GLM 5.3 Flash가 무료로 제공되고 있으나, 최신 프론티어 모델 대비 성능은 B~C 티어 수준으로 평가됨. ## 4. 달 탐사 Mass Driver 대형 프로젝트 및 기타 이슈 - 달 자원 활용 및 Mass Driver 계획: Phase 1(태양광 패널, 레골리스 선별, 모터 생산)을 거쳐 Phase 5에서 5.65km 길이의 Mass Driver를 달 현지 자원으로 건설하는 정밀 계획(NASA/SpaceX 제출용 ROM 산출 목적) 진행 중. - Hark AI 무료 피자 프로모션: 에이전트 컴퓨터 사용(Computer Use) 기능을 활용해 $30 상당의 무료 피자를 주문하고 크레딧을 얻는 해프닝으로 유저 참여가 폭주함. - Treblo (음악 AI) 대규모 업데이트: 사이트 UI 전면 개편, 새로운 가사 생성기 테스트, AI 곡 커버(Covers) 기능 및 V3 음질 개선 업데이트 발표.",
+  "chars": 1714,
+  "source_chars": 161828,
+  "title_method": "llm",
+  "brand": "네온 두부"
+}
