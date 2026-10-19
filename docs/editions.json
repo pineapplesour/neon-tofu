@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-10-19",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-10-19T18:55:01.313802+09:00",
+    "window_start": "2026-10-19T06:05:02.000906+09:00",
+    "window_end": "2026-10-19T18:05:02.000906+09:00",
+    "title": "앤트로픽 신모델 출시와 주요 AI 업계 동향 종합",
+    "chars": 2053,
+    "source_chars": 116499,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-10-19",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-10-19T06:55:02.066082+09:00",
