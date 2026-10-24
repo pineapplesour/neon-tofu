@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-25",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-25T06:55:01.893799+09:00",
+    "window_start": "2026-10-24T18:05:01.922942+09:00",
+    "window_end": "2026-10-25T06:05:01.922942+09:00",
+    "title": "구글 및 주요 AI 모델 성능 저하 의혹과 관련 동향",
+    "chars": 2591,
+    "source_chars": 161379,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-24",
     "slot": "evening",
     "slot_label": "석간",
