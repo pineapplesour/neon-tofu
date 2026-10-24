@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네온 두부 — 앤스로픽 키미 제미니 및 오픈아이 등 주요 인공지능 모델 최신 동향</title>
+<style>
+  :root{--paper:#fbf9f6;--ink:#16151a;--dim:#8b8679;--rule:#e2ddd2;--neon:#00d9c0}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.72;letter-spacing:-.012em}
+  .wrap{max-width:780px;margin:0 auto;padding:34px 22px 80px}
+  .masthead{display:flex;align-items:flex-end;gap:16px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+  .logo{display:grid;grid-template-columns:repeat(2,13px);grid-auto-rows:13px;gap:2px}
+  .logo i{background:var(--ink);border-radius:1px}
+  .logo i:nth-child(4){background:var(--neon)}
+  .name{font-size:26px;font-weight:800;letter-spacing:-.05em;line-height:1}
+  .name a{color:inherit;text-decoration:none}
+  .name small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.34em;color:var(--dim);margin-top:7px}
+  .stamp{margin-left:auto;text-align:right;font-size:11px;color:var(--dim);line-height:1.5}
+  .lede{padding:46px 0 14px;text-align:center}
+  .edline{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .edline b{color:var(--ink)}
+  h1{font-size:clamp(26px,6.2vw,40px);line-height:1.24;margin:16px 0 14px;letter-spacing:-.05em;font-weight:800}
+  .dateline{font-size:12.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+  .body{max-width:660px;margin:34px auto 0;font-size:16px}
+  .body p{margin:0 0 20px}
+  .body>p:first-child::first-letter{float:left;font-size:56px;line-height:.86;font-weight:800;padding:6px 10px 0 0;color:var(--neon)}
+  .body h3,.body h4{font-size:16px;margin:30px 0 10px;letter-spacing:-.03em}
+  .body h3{border-bottom:1px solid var(--rule);padding-bottom:8px}
+  .body ul{margin:0 0 20px;padding-left:20px}
+  .body li{margin:0 0 8px}
+  .body hr{border:0;border-top:1px solid var(--rule);margin:34px 0}
+  .body strong{font-weight:700}
+  .body code{background:#f1eee7;padding:1px 5px;border-radius:4px;font-size:14px}
+  .rule{height:1px;background:var(--rule);margin:44px 0 26px}
+  .secttl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);margin:0 0 18px}
+  ol.past{list-style:none;margin:0;padding:0;counter-reset:p}
+  ol.past li{counter-increment:p;border-bottom:1px solid var(--rule)}
+  ol.past li a{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;
+    padding:15px 4px;text-decoration:none;color:var(--ink)}
+  ol.past li a::before{content:counter(p,decimal-leading-zero);font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+  ol.past .t{font-size:15px;font-weight:600;letter-spacing:-.02em}
+  ol.past .d{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+  ol.past li a:hover .t{color:var(--neon)}
+  ol.past li.e .t::after{content:"석간";font-size:10px;font-weight:700;color:#fff;background:var(--ink);
+    border-radius:3px;padding:2px 5px;margin-left:8px;vertical-align:2px}
+  ol.past li.m .t::after{content:"조간";font-size:10px;font-weight:700;color:var(--neon);border:1px solid var(--neon);
+    border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:2px}
+  .back{display:inline-block;margin:2px 0 0;font-size:12.5px;color:var(--dim);text-decoration:none}
+  .back:hover{color:var(--neon)}
+  .pager{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:26px 0 0}
+  .pager button{font:inherit;font-size:13.5px;padding:0 1px;cursor:pointer;background:none;border:0;
+    color:var(--dim);font-variant-numeric:tabular-nums}
+  .pager button:hover{color:var(--ink)}
+  .pager button.on{color:var(--ink);font-weight:800;border-bottom:2px solid var(--neon)}
+  .foot{margin-top:46px;font-size:11px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  @media(max-width:520px){
+    .wrap{padding:24px 16px 70px}
+    ol.past li a{grid-template-columns:28px 1fr;gap:10px}
+    ol.past .d{grid-column:2;text-align:left}
+    .masthead{flex-wrap:wrap;row-gap:8px}
+    .stamp{flex-basis:100%;margin-left:0;text-align:left}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <div class="logo"><i></i><i></i><i></i><i></i></div>
+    <div class="name"><a href="../index.html">네온 두부</a><small>NEON TOFU</small></div>
+    <div class="stamp">하루 두 번 · 조간(07시) / 석간(19시)<br>요약만 남긴 AI 뉴스</div>
+  </div>
+  <a class="back" href="../index.html">← 최신호 보기</a>
+  <div class="lede">
+    <div class="edline"><b>석간</b></div>
+    <h1>앤스로픽 키미 제미니 및 오픈아이 등 주요 인공지능 모델 최신 동향</h1>
+    <div class="dateline">2026년 10월 24일 밤</div>
+  </div>
+  <div class="body">
+<p>이것만 봐도 배부른 알짜배기만 모았습니다</p>
+<h3>1. Anthropic 인사 변동 및 Claude 관련 동향</h3>
+<ul>
+<li>Anthropic의 핵심 인력인 Thariq(@trq212)이 본인의 공식 SNS를 통해 퇴사 사실을 알렸습니다.</li>
+<li>Sunil Pai가 새롭게 합류했다는 언급이 나왔습니다 (한 유저 주장).</li>
+<li>Claude Code 개발 도구에 대해 세션이 임의로 종료되어 복구되지 않는 문제, 목표 모드(goal mode)의 예외 처리 미흡 등 잦은 버그와 불편한 UX에 대한 피드백이 나왔습니다.</li>
+<li>Opus 5.5가 복잡한 요구사항을 건너뛰거나 결과물을 급하게 내놓는 등 체감 성능이 떨어졌다는 주장이 있으나, 공식적으로 확인된 바는 없습니다 (한 유저 주장).</li>
+<li>5시간 단위의 Claude 세션 초기화 타이밍을 사용하기 편한 시간대로 맞추기 위해 이른 시간에 메시지를 보내 창을 이동시키는 편법이 공유되었습니다.</li>
+</ul>
+<h3>2. Kimi K3.1 및 K3.1 Pro 동향</h3>
+<ul>
+<li>K3.1 Pro의 오픈웨이트 릴리즈와 관련해 범용 코딩 능력은 유지하되, 보안 우려가 있는 사이버 관련 데이터셋을 학습 단계에서 제거했다는 내용이 공유되었습니다.</li>
+<li>Kimi의 공식 구독제는 할당되는 컴퓨트 쿼터가 적어 제한에 쉽게 걸리기 때문에, OpenRouter 등의 API를 충전해 쓰는 편이 낫다는 실사용 평가가 다수 제기되었습니다.</li>
+<li>Three.js 기반의 복잡한 웹 인터랙티브 3D 씬(석양의 바다를 항해하는 범선 구현 등)을 한 번에 생성하는 데 있어 인상적인 코드 생성 능력을 보여주었다는 테스트가 확인되었습니다.</li>
+<li>벤치마크 점수에 비해 실제 체감 추론력은 기대 이하이며, 타사 상위 모델을 증류(distill)해 벤치마크에만 과최적화된 것이 아니냐는 의견도 있습니다 (한 유저 주장).</li>
+</ul>
+<h3>3. Google Gemini 관련 정보</h3>
+<ul>
+<li>'Argon', 'Carbon' 등 화학 원소명을 프로젝트 명칭으로 차용한 내부 체크포인트들이 언급되고 있습니다 (루머).</li>
+<li>AI Studio 환경에서 Gemini 4 Argon의 쿼터 한도가 여유로워 작업 모드(Task mode) 활용에 적합하다는 평이 있으나, 전반적인 생성 속도는 느리다는 지적이 있습니다.</li>
+<li>Gemini 3.8 Flash 모델은 저렴한 비용 대비 실사용 성능 효율이 우수하다는 평가를 받았습니다.</li>
+</ul>
+<h3>4. OpenAI 모델 및 프론티어 LLM 동향</h3>
+<ul>
+<li>GPT-6.1 Sol 모델이 코드 리뷰 작업에서 강점을 보이고 시스템 거부(Refusal) 빈도가 낮다는 평가가 나왔습니다 (한 유저 주장).</li>
+<li>고가 플랜(월 500달러 구독 등)의 실질적인 쿼터 혜택이 타사 플랜에 비해 크지 않다는 사용자들의 지적이 이어졌습니다.</li>
+<li>중국계 모델 GLM의 신규 버전(GLM-5.5) 출시에 대한 기대감이 형성되어 있으며, 플랫폼 신규 가입자 대상 토큰 제공 프로모션이 언급되었습니다.</li>
+</ul>
+<h3>5. 멀티미디어(영상·3D) 생성 모델 동향</h3>
+<ul>
+<li>영상 모델 Seedance 2.5는 화풍 유지력은 괜찮으나 전투 액션 연출의 역동성과 오디오/음성 완성도가 이전 버전 대비 저하되었다는 평가가 나왔습니다.</li>
+<li>Wan 3 영상 모델은 Seedance 대비 가격이 1/3 수준으로 저렴하며, 빠르고 혼란스러운 액션 씬 생성에서 가성비 대안으로 거론되었습니다.</li>
+<li>3D 생성 분야의 경우 전용 3D 생성 모델을 쓰는 것보다 최신 LLM을 통해 Three.js나 Blender 코드를 직접 짜게 만드는 방식이 수정 편의성과 비용 측면에서 더 유리하다는 작업 팁이 공유되었습니다.</li>
+</ul>
+  </div>
+  <div class="rule"></div>
+  <p class="secttl">지난 요약</p>
+  <ol class="past" id="past">
+    <li class="m" data-i="0"><a href="../e/2026-10-24-morning.html"><span class="t">문샷AI 키미 신모델 출시와 주요 빅테크 AI 동향 요약</span><span class="d">2026년 10월 24일 낮</span></a></li>
+    <li class="e" data-i="1"><a href="../e/2026-10-23-evening.html"><span class="t">클로드 차세대 모델 라우팅부터 앤트로픽과 구글 및 중국 AI 동향</span><span class="d">2026년 10월 23일 밤</span></a></li>
+    <li class="m" data-i="2"><a href="../e/2026-10-23-morning.html"><span class="t">앤스로픽 구글 오픈소스 OpenAI 주요 인공지능 모델 동향</span><span class="d">2026년 10월 23일 낮</span></a></li>
+    <li class="e" data-i="3"><a href="../e/2026-10-22-evening.html"><span class="t">신규 AI 모델 출시와 차기작 테스트 및 보안 취약점 동향</span><span class="d">2026년 10월 22일 밤</span></a></li>
+    <li class="m" data-i="4"><a href="../e/2026-10-22-morning.html"><span class="t">오픈에이아이 보안 취약점 발견부터 주요 빅테크 AI 모델 동향까지</span><span class="d">2026년 10월 22일 낮</span></a></li>
+    <li class="e" data-i="5"><a href="../e/2026-10-21-evening.html"><span class="t">앤스로픽 오픈AI 및 주요 AI 모델 최신 동향과 개발 소식 요약</span><span class="d">2026년 10월 21일 밤</span></a></li>
+    <li class="m" data-i="6"><a href="../e/2026-10-21-morning.html"><span class="t">앤스로픽 오픈아이 구글의 차기 모델 유출 정황과 주요 AI 동향</span><span class="d">2026년 10월 21일 낮</span></a></li>
+    <li class="e" data-i="7"><a href="../e/2026-10-20-evening.html"><span class="t">앤스로픽 오프엔에이 구글 주요 인공지능 모델 동향과 유출 소식 요약</span><span class="d">2026년 10월 20일 밤</span></a></li>
+    <li class="m" data-i="8"><a href="../e/2026-10-20-morning.html"><span class="t">앤스로픽 차기 모델 유출 및 주요 AI 업계 동향 종합</span><span class="d">2026년 10월 20일 낮</span></a></li>
+    <li class="e" data-i="9"><a href="../e/2026-10-19-evening.html"><span class="t">앤스로픽 공익 펀드 설립과 딥시크 성능 비교 및 AI 모델 동향</span><span class="d">2026년 10월 19일 밤</span></a></li>
+    <li class="m" data-i="10"><a href="../e/2026-10-19-morning.html"><span class="t">클로드 오퍼스 독주 속 주요 AI 모델 동향 및 기술 발전</span><span class="d">2026년 10월 19일 낮</span></a></li>
+    <li class="e" data-i="11"><a href="../e/2026-10-18-evening.html"><span class="t">차세대 AI 모델 동향과 GPU 하드웨어 대란 및 업계 소식</span><span class="d">2026년 10월 18일 밤</span></a></li>
+    <li class="m" data-i="12"><a href="../e/2026-10-18-morning.html"><span class="t">딥시크 V4.1과 신규 모델 라우팅 테스트 등 최신 AI 동향 종합</span><span class="d">2026년 10월 18일 낮</span></a></li>
+    <li class="e" data-i="13"><a href="../e/2026-10-17-evening.html"><span class="t">앤스로픽 구글 딥시크 최신 모델 동향과 인공지능 업계 주요 소식</span><span class="d">2026년 10월 17일 밤</span></a></li>
+    <li class="m" data-i="14"><a href="../e/2026-10-17-morning.html"><span class="t">앤스로픽 구글 오픈AI 및 글로벌 AI 업계 최신 동향 요약</span><span class="d">2026년 10월 17일 낮</span></a></li>
+    <li class="e" data-i="15"><a href="../e/2026-10-16-evening.html"><span class="t">구글 제미나이 4.0 아르곤 배포와 클로드 5.5 유출 등 주요 AI 동향</span><span class="d">2026년 10월 16일 밤</span></a></li>
+    <li class="m" data-i="16"><a href="../e/2026-10-16-morning.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 빅테크 AI 모델 개발 및 출시 동향</span><span class="d">2026년 10월 16일 낮</span></a></li>
+    <li class="e" data-i="17"><a href="../e/2026-10-15-evening.html"><span class="t">차세대 AI 모델 동향과 우주 데이터센터 및 개발 최적화 팁</span><span class="d">2026년 10월 15일 밤</span></a></li>
+    <li class="m" data-i="18"><a href="../e/2026-10-15-morning.html"><span class="t">구글 아르곤 출시와 앤트로픽 차기작 루머 등 주요 AI 동향</span><span class="d">2026년 10월 15일 낮</span></a></li>
+    <li class="e" data-i="19"><a href="../e/2026-10-14-evening.html"><span class="t">구글 제미나이 4 신모델 논란과 앤트로픽 클로드 독주 체제</span><span class="d">2026년 10월 14일 밤</span></a></li>
+    <li class="m" data-i="20"><a href="../e/2026-10-14-morning.html"><span class="t">구글 제미나이 4 아르곤 고가 티어 선출시 논란과 업계 동향</span><span class="d">2026년 10월 14일 낮</span></a></li>
+    <li class="e" data-i="21"><a href="../e/2026-10-13-evening.html"><span class="t">구글 제미니 4.0 출시 임박 및 주요 AI 모델 동향</span><span class="d">2026년 10월 13일 밤</span></a></li>
+    <li class="m" data-i="22"><a href="../e/2026-10-13-morning.html"><span class="t">주요 AI 모델 출시 동향과 개발 트렌드 및 커뮤니티 소식</span><span class="d">2026년 10월 13일 낮</span></a></li>
+    <li class="e" data-i="23"><a href="../e/2026-10-12-evening.html"><span class="t">최신 AI 모델 스텔스 테스트와 유출 소식 및 개발자 트렌드 요약</span><span class="d">2026년 10월 12일 밤</span></a></li>
+    <li class="m" data-i="24"><a href="../e/2026-10-12-morning.html"><span class="t">주요 AI 모델 신규 테스트 동향 및 코딩 제작 활용 사례</span><span class="d">2026년 10월 12일 낮</span></a></li>
+    <li class="e" data-i="25"><a href="../e/2026-10-11-evening.html"><span class="t">구글 제미나이와 클로드 신규 모델 찌라시 및 주요 AI 동향 요약</span><span class="d">2026년 10월 11일 밤</span></a></li>
+    <li class="m" data-i="26"><a href="../e/2026-10-11-morning.html"><span class="t">오픈에이아이 구글 앤트로픽 주요 인공지능 모델 및 하드웨어 동향 요약</span><span class="d">2026년 10월 11일 낮</span></a></li>
+    <li class="e" data-i="27"><a href="../e/2026-10-10-evening.html"><span class="t">주요 AI 기업 신모델 개발 동향 및 커뮤니티 소식 요약</span><span class="d">2026년 10월 10일 밤</span></a></li>
+    <li class="m" data-i="28"><a href="../e/2026-10-10-morning.html"><span class="t">구글 제미나이 4와 앤트로픽 클로드 등 최신 AI 모델 출시 루머 및 기술 동향 요약</span><span class="d">2026년 10월 10일 낮</span></a></li>
+    <li class="e" data-i="29"><a href="../e/2026-10-09-evening.html"><span class="t">앤스로픽 구글 오픈AI 등 주요 AI 모델 동향 및 업계 소식</span><span class="d">2026년 10월 9일 밤</span></a></li>
+    <li class="m" data-i="30"><a href="../e/2026-10-09-morning.html"><span class="t">구글 제미나이 4 아르곤 출시 루머와 주요 AI 모델 최신 동향</span><span class="d">2026년 10월 9일 낮</span></a></li>
+    <li class="e" data-i="31"><a href="../e/2026-10-08-evening.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 글로벌 AI 모델 성능 및 동향</span><span class="d">2026년 10월 8일 밤</span></a></li>
+    <li class="m" data-i="32"><a href="../e/2026-10-08-morning.html"><span class="t">구글 제미나이 아르고과 앤트로픽 클로드 하이쿠 등 주요 AI 동향</span><span class="d">2026년 10월 8일 낮</span></a></li>
+    <li class="e" data-i="33"><a href="../e/2026-10-07-evening.html"><span class="t">오픈아이유 수학 논문 대거 공개와 주요 인공지능 기업 동향</span><span class="d">2026년 10월 7일 밤</span></a></li>
+    <li class="m" data-i="34"><a href="../e/2026-10-07-morning.html"><span class="t">구글 앤트로픽 오픈AI 미스트랄 주요 AI 모델 신제품 및 업계 동향 요약</span><span class="d">2026년 10월 7일 낮</span></a></li>
+    <li class="e" data-i="35"><a href="../e/2026-10-06-evening.html"><span class="t">앤스로픽 오픈AI 구글의 주요 AI 모델 최신 동향과 산업 소식 요약</span><span class="d">2026년 10월 6일 밤</span></a></li>
+    <li class="m" data-i="36"><a href="../e/2026-10-06-morning.html"><span class="t">구글 앤트로픽 오픈AI 주요 AI 모델 업데이트 및 시장 동향</span><span class="d">2026년 10월 6일 낮</span></a></li>
+    <li class="e" data-i="37"><a href="../e/2026-10-05-evening.html"><span class="t">오픈에이아이 앤트로픽 구글의 주요 모델 출시 및 정책 동향</span><span class="d">2026년 10월 5일 밤</span></a></li>
+    <li class="m" data-i="38"><a href="../e/2026-10-05-morning.html"><span class="t">주요 AI 모델 성능 비교와 신규 출시 루머 및 활용 동향</span><span class="d">2026년 10월 5일 낮</span></a></li>
+    <li class="e" data-i="39"><a href="../e/2026-10-04-evening.html"><span class="t">앤트로픽과 오픈아이 등 주요 글로벌 인공지능 기업 최신 동향 요약</span><span class="d">2026년 10월 4일 밤</span></a></li>
+    <li class="m" data-i="40"><a href="../e/2026-10-04-morning.html"><span class="t">앤스로픽과 구글 등 주요 AI 모델의 최신 동향 및 업데이트 소식</span><span class="d">2026년 10월 4일 낮</span></a></li>
+    <li class="e" data-i="41"><a href="../e/2026-10-03-evening.html"><span class="t">주요 LLM 성능 비교와 구글 제미나이 요금제 개편 및 AI 업계 동향</span><span class="d">2026년 10월 3일 밤</span></a></li>
+    <li class="m" data-i="42"><a href="../e/2026-10-03-morning.html"><span class="t">차세대 AI 모델 출시 임박과 바이브 코딩 트렌드 및 하드웨어 소식</span><span class="d">2026년 10월 3일 낮</span></a></li>
+    <li class="e" data-i="43"><a href="../e/2026-10-02-evening.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 신규 모델 동향 및 성능 평가</span><span class="d">2026년 10월 2일 밤</span></a></li>
+    <li class="m" data-i="44"><a href="../e/2026-10-02-morning.html"><span class="t">구글 제미나이 4 유출과 주요 AI 랩스 최신 동향 요약</span><span class="d">2026년 10월 2일 낮</span></a></li>
+    <li class="e" data-i="45"><a href="../e/2026-10-01-evening.html"><span class="t">구글 제미나이 4 아곤 공개 및 주요 AI 모델 동향 요약</span><span class="d">2026년 10월 1일 밤</span></a></li>
+    <li class="m" data-i="46"><a href="../e/2026-10-01-morning.html"><span class="t">2026년 하반기 주요 AI 모델 동향과 업계 판도 분석</span><span class="d">2026년 10월 1일 낮</span></a></li>
+    <li class="e" data-i="47"><a href="../e/2026-09-30-evening.html"><span class="t">오픈에이전트 출시와 주요 AI 모델별 성능 및 요금 정책 동향</span><span class="d">2026년 9월 30일 밤</span></a></li>
+    <li class="m" data-i="48"><a href="../e/2026-09-30-morning.html"><span class="t">오픈에이아이 신모델 공개와 구독제 개편 및 업계 반응</span><span class="d">2026년 9월 30일 낮</span></a></li>
+    <li class="e" data-i="49"><a href="../e/2026-09-29-evening.html"><span class="t">오픈에이아이 신형 모델 출시 취소와 요금제 개편 논란 및 AI 업계 동향</span><span class="d">2026년 9월 29일 밤</span></a></li>
+    <li class="m" data-i="50"><a href="../e/2026-09-29-morning.html"><span class="t">앤트로픽 클로드 5.5 기습 출시 및 주요 AI 기업 최신 동향 요약</span><span class="d">2026년 9월 29일 낮</span></a></li>
+    <li class="e" data-i="51"><a href="../e/2026-09-28-evening.html"><span class="t">오픈에이아이 개발자 데이 전망과 앤스로픽 및 구글 주요 인공지능 모델 동향</span><span class="d">2026년 9월 28일 밤</span></a></li>
+    <li class="m" data-i="52"><a href="../e/2026-09-28-morning.html"><span class="t">앤트로픽 오픈아이 구글의 신모델 출시 및 글로벌 AI 동향 요약</span><span class="d">2026년 9월 28일 낮</span></a></li>
+    <li class="e" data-i="53"><a href="../e/2026-09-27-evening.html"><span class="t">앤스로픽 오퍼스 5.5 호평과 주요 AI 랩 신모델 출시 동향</span><span class="d">2026년 9월 27일 밤</span></a></li>
+    <li class="m" data-i="54"><a href="../e/2026-09-27-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 기업의 차세대 모델 출시 및 생태계 동향 루머 요약</span><span class="d">2026년 9월 27일 낮</span></a></li>
+    <li class="e" data-i="55"><a href="../e/2026-09-26-evening.html"><span class="t">주요 AI 모델 성능 동향과 멀티미디어 제작 및 플랫폼 이슈 요약</span><span class="d">2026년 9월 26일 밤</span></a></li>
+    <li class="m" data-i="56"><a href="../e/2026-09-26-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 AI 기업 최신 모델 동향과 산업 전망</span><span class="d">2026년 9월 26일 낮</span></a></li>
+    <li class="e" data-i="57"><a href="../e/2026-09-25-evening.html"><span class="t">오픈에이아이 앤스로픽 등 주요 인공지능 기업 최신 유출 및 모델 동향 요약</span><span class="d">2026년 9월 25일 밤</span></a></li>
+    <li class="m" data-i="58"><a href="../e/2026-09-25-morning.html"><span class="t">앤스로픽 클로드 5.5 호평 속 주요 AI 모델 최신 동향</span><span class="d">2026년 9월 25일 낮</span></a></li>
+    <li class="e" data-i="59"><a href="../e/2026-09-24-evening.html"><span class="t">앤트로픽 클로드 5.5 압도적 성능과 주요 빅테크 AI 모델 동향</span><span class="d">2026년 9월 24일 밤</span></a></li>
+    <li class="m" data-i="60"><a href="../e/2026-09-24-morning.html"><span class="t">앤트로픽과 구글 및 오픈AI의 차세대 인공지능 모델 주요 동향</span><span class="d">2026년 9월 24일 낮</span></a></li>
+    <li class="e" data-i="61"><a href="../e/2026-09-23-evening.html"><span class="t">앤스로픽 클로드 오푸스 5점 5 출시와 주요 인공지능 기업 동향</span><span class="d">2026년 9월 23일 밤</span></a></li>
+    <li class="m" data-i="62"><a href="../e/2026-09-23-morning.html"><span class="t">앤트로픽 클로드 오퍼스 5.5 기습 출시와 오픈AI 및 구글 등 주요 AI 기업 동향</span><span class="d">2026년 9월 23일 낮</span></a></li>
+    <li class="e" data-i="63"><a href="../e/2026-09-22-evening.html"><span class="t">주요 빅테크 기업 차세대 AI 모델 유출 정보 및 성능 평가 요약</span><span class="d">2026년 9월 22일 밤</span></a></li>
+    <li class="m" data-i="64"><a href="../e/2026-09-22-morning.html"><span class="t">앤스로픽 오퍼스 5.5 출시 임박과 샤오미 미모 2.6 오픈소스 공개</span><span class="d">2026년 9월 22일 낮</span></a></li>
+    <li class="e" data-i="65"><a href="../e/2026-09-21-evening.html"><span class="t">앤트로픽과 오픈아이의 차세대 모델 유출 및 주요 AI 동향 요약</span><span class="d">2026년 9월 21일 밤</span></a></li>
+    <li class="m" data-i="66"><a href="../e/2026-09-21-morning.html"><span class="t">앤스로픽 오픈AI 구글 최신 AI 모델 유출 정보 및 성능 비교 동향</span><span class="d">2026년 9월 21일 낮</span></a></li>
+    <li class="e" data-i="67"><a href="../e/2026-09-20-evening.html"><span class="t">앤스로픽 오픈아이 구글 및 중국계 주요 AI 모델 신제품 출시 동향 소식</span><span class="d">2026년 9월 20일 밤</span></a></li>
+    <li class="m" data-i="68"><a href="../e/2026-09-20-morning.html"><span class="t">구글 앤트로픽 오픈AI 및 중국 진영의 차세대 AI 모델 주요 유출 소식</span><span class="d">2026년 9월 20일 낮</span></a></li>
+    <li class="e" data-i="69"><a href="../e/2026-09-19-evening.html"><span class="t">앤스로픽 클로드 5점 2 및 구글 제미나이 4 시리즈 주요 AI 동향</span><span class="d">2026년 9월 19일 밤</span></a></li>
+    <li class="m" data-i="70"><a href="../e/2026-09-19-morning.html"><span class="t">앤스로픽 신규 모델과 구글 및 중국계 주요 AI 최신 동향 요약</span><span class="d">2026년 9월 19일 낮</span></a></li>
+    <li class="e" data-i="71"><a href="../e/2026-09-18-evening.html"><span class="t">주요 AI 모델 업데이트와 보안 이슈 및 개발 생태계 동향</span><span class="d">2026년 9월 18일 밤</span></a></li>
+    <li class="m" data-i="72"><a href="../e/2026-09-18-morning.html"><span class="t">구글 제미나이 4 유출과 주요 글로벌 AI 랩의 차세대 모델 동향</span><span class="d">2026년 9월 18일 낮</span></a></li>
+    <li class="e" data-i="73"><a href="../e/2026-09-17-evening.html"><span class="t">OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지</span><span class="d">2026년 9월 17일 밤</span></a></li>
+    <li class="m" data-i="74"><a href="../e/2026-09-17-morning.html"><span class="t">OpenAI와 구글의 차세대 AI 모델 동향 및 중국계 루머 정리</span><span class="d">2026년 9월 17일 낮</span></a></li>
+  </ol>
+  <nav class="pager" id="pager" hidden></nav>
+  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>2026년 10월 24일 밤 · 빌드 2026-10-24 18:55</span></div>
+</div>
+<script>
+(function () {
+  var PER = 5;
+  var ol = document.getElementById('past');
+  var pager = document.getElementById('pager');
+  if (!ol || !pager) return;
+  var items = Array.prototype.slice.call(ol.children);
+  if (items.length <= PER) return;
+  var pages = Math.ceil(items.length / PER);
+  var cur = 0;
+  function render() {
+    items.forEach(function (li, i) { li.hidden = Math.floor(i / PER) !== cur; });
+    Array.prototype.forEach.call(pager.children, function (b, i) {
+      b.className = (i === cur) ? 'on' : '';
+      b.setAttribute('aria-current', i === cur ? 'page' : 'false');
+    });
+    if (history.replaceState) history.replaceState(null, '', '#p' + (cur + 1));
+  }
+  for (var i = 0; i < pages; i++) {
+    (function (i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = String(i + 1);
+      b.addEventListener('click', function () { cur = i; render(); });
+      pager.appendChild(b);
+    })(i);
+  }
+  pager.hidden = false;
+  var m = location.hash.match(/^#p(\d+)$/);
+  if (m) { var n = parseInt(m[1], 10) - 1; if (n >= 0 && n < pages) cur = n; }
+  render();
+})();
+</script>
+</body>
+</html>
