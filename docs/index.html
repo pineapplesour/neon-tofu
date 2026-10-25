@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>네온 두부 — 앤트로픽 오픈아이 구글 및 글로벌 오픈소스 AI 주요 동향 요약</title>
+<title>네온 두부 — 주요 AI 모델 출시 루머 및 오픈소스 동향과 업계 소식</title>
 <style>
   :root{--paper:#fbf9f6;--ink:#16151a;--dim:#8b8679;--rule:#e2ddd2;--neon:#00d9c0}
   *{box-sizing:border-box}
@@ -74,130 +74,126 @@
   </div>
   <a class="back" href="list.html">← 목록 보기</a>
   <div class="lede">
-    <div class="edline">최신 호 · <b>석간</b></div>
-    <h1>앤트로픽 오픈아이 구글 및 글로벌 오픈소스 AI 주요 동향 요약</h1>
-    <div class="dateline">2026년 10월 25일 밤</div>
+    <div class="edline">최신 호 · <b>조간</b></div>
+    <h1>주요 AI 모델 출시 루머 및 오픈소스 동향과 업계 소식</h1>
+    <div class="dateline">2026년 10월 26일 낮</div>
   </div>
   <div class="body">
 <p>이것만 봐도 배부른 알짜배기만 모았습니다.</p>
-<h3>1. 앤트로픽 (Anthropic) 및 클로드 모델 소식</h3>
+<h3>1. 주요 모델 출시 및 유출 루머</h3>
 <ul>
-<li>클로드 내부 웹 환경에서 'Fable 5.5'의 프로덕션 체크포인트 경로(<code>/home/Anthropic/Models/Fable/Fable5-5/production/checkpoints/2026-10-25/</code>)가 발견되었다는 주장이 제기되었습니다. (한 유저 주장)</li>
-<li>커뮤니티 내부에서는 Fable 5.5의 출시일을 10월 27일 또는 11월 초로 점치고 있습니다. (루머)</li>
-<li>최근 클로드 웹 및 Claude Code(CC), Agents SDK 사용 시 주간·5시간 사용량 제한이 비정상적으로 빠르게 소진되는 현상이 보고되고 있습니다.</li>
-<li>사용량 급증 현상에 대해 내부 관계자(Boris)가 의도된 변경 사항이 아니라고 밝혔다는 언급이 있어 단순 버그일 가능성이 제기되고 있습니다.</li>
-<li>최신 클로드 모델에서 저작권이 있는 디자인 복제나 리버스 엔지니어링(REA) 관련 프롬프트에 대한 거부 및 검열 기준이 한층 강화되었다는 관측이 나왔습니다. (한 유저 주장)</li>
-<li>Opus 5.5의 추론 노력도(Effort Level) 설정과 관련해, 비용 대비 효율은 '중간(Medium)', 결과물의 깔끔함은 '높음(High)'이 가장 안정적이라는 실사용자 피드백이 공유되었습니다.</li>
+<li>Anthropic의 차기 모델 'Fable 5.5'의 출시 시점을 두고 10월 말(27~29일) 또는 11월 초(11월 3일 전후)가 될 것이라는 예측이 이어지고 있습니다 (루머).</li>
+<li>Fable 5.5는 첫 번째 체크포인트 이후 피드백을 반영한 추가 튜닝을 거치고 있으며, 기업공개(IPO) 일정 및 외부 이슈를 고려해 공개 시점을 조율 중이라는 주장이 나왔습니다 (한 유저 주장).</li>
+<li>OpenAI의 차기 라인업 중 하나로 'GPT-6.1 Terra'가 일부 경로에서 포착되었다는 소식이 전해졌습니다 (루머).</li>
+<li>Qwen 4(27B) 모델이 아레나(Arena AI) 플랫폼에 스텔스 상태로 등록되어 테스트 중이라는 주장이 제기되었습니다 (한 유저 주장).</li>
+<li>Google 내부에서 'Gemini-4-flash-preview' 코드네임이 확인되었으며 출시 준비 단계에 있다는 소식이 전해졌습니다 (루머).</li>
 </ul>
-<h3>2. 오픈AI (OpenAI) 및 관련 기능 소식</h3>
+<h3>2. 오픈소스 및 특화 모델 동향</h3>
 <ul>
-<li>이미지 생성 모델 테스트 환경에서 <code>gpt-image-2.5-sunburst</code>, <code>gpt-image-2.5-moderation-sunburst</code> 등의 모델 식별자가 포착되었습니다. (한 유저 주장)</li>
-<li>ChatGPT 웹 환경에서 네이티브로 제공되던 메시지 대기열(Queue) 기능이 비활성화되어 별도 확장 프로그램을 사용해야 한다는 지적이 나왔습니다.</li>
-<li>코딩 작업 시 GPT 모델이 통합 테스트나 엔드투엔드(E2E) 테스트 없이 깨지기 쉬운 단위 테스트(Unit test)를 과도하게 작성하는 경향이 있어, 다른 모델을 오케스트레이터로 함께 쓰는 방식이 권장된다는 평가가 있습니다.</li>
-<li>인라인 코드 작성 중 다음 입력을 유추하는 Codex 텍스트 예측 기능이 실사용에서 준수한 정확도를 보이고 있다는 실사용 평가가 공유되었습니다.</li>
+<li>Nanbeige 연구팀이 루프형 트랜스포머(Looped Transformer) 구조를 적용한 33B 체급의 오픈소스 모델 'Nanbeige4.3-33B'를 공개했습니다.</li>
+<li>Nanbeige4.3-33B 모델은 체급 대비 우수한 수치를 기록하며 deepSWE 65.5점, Terminal Bench 4.0에서 23.8점을 기록한 것으로 공유되었습니다.</li>
+<li>미스트랄(Mistral)의 시계열 분석 모델 'Timestral'이 저사양 환경에서도 구동 가능하며 제조업 생산 및 수요 예측 분야에서 실무적으로 유용하다는 평가를 받았습니다.</li>
+<li>사이버 보안 연구 및 취약점 분석 작업에는 DeepSeek v4.1 Flash와 검열이 제거된 GLM 5.3 계열 모델이 실무 대안으로 주로 언급되고 있습니다.</li>
+<li>Qwen 3.8 Flash Omni 모델의 경우 시각 및 추론 작업 중 환각(Hallucination) 현상이 여전히 잦다는 지적이 있었습니다.</li>
 </ul>
-<h3>3. 구글 (Google) 및 제미나이 관련 동향</h3>
+<h3>3. 개발자 혜택 및 API 라우터 현황</h3>
 <ul>
-<li>제미나이 프로 플랜 앱에서 'Argon' 모델의 과도한 토큰 소모 버그가 일부 완화 및 수정된 것으로 보인다는 피드백이 있습니다. (한 유저 주장)</li>
-<li>코드명 'Carbon'이 제미나이 4 플래시(Gemini 4 Flash)를 의미하며, 12월 출시를 목표로 하고 있다는 주장이 제기되었습니다. (루머)</li>
-<li>영상 생성 모델 중 가성비 대안으로 'Omni Flash 1.1'이 거론되고 있으나, 품질 측면에서는 아쉽다는 사용자 평가가 있습니다.</li>
+<li>핵토버페스트 프로모션을 통해 ElevenLabs 1개월 무료 이용 혜택 등 개발자 프로모션 리소스가 배포 중입니다.</li>
+<li>Agentrouter에서 DeepSeek 지원이 중단되고 Sol/Astra 증류 모델로 변경되었으며, 대안으로 무료 V4 Flash를 제공하는 Antseed가 거론되고 있습니다.</li>
+<li>저비용 API 대안 플랫폼으로 Inferhub.dev, Surplus Intelligence, Antseed가 추천되었으며, 가상자산 결제를 지원하는 OpenRouter 대안으로는 B.ai가 언급되었습니다.</li>
+<li>Venice AI는 익명으로 15회 무료 질의가 가능하지만 전용 API는 제공되지 않으며, 무검열 라우터 서비스 중 하나로 거론되었습니다.</li>
+<li>주요 서비스들의 사용량 제한 정책이 강화되는 추세이며, OpenAI 고가 플랜의 Astra 주간 쿼리 한도가 축소될 예정이라는 주장이 나왔습니다 (한 유저 주장).</li>
 </ul>
-<h3>4. 글로벌 오픈소스 및 서드파티 모델 동향</h3>
+<h3>4. 하드웨어 및 업계 이슈</h3>
 <ul>
-<li>OpenCode Go에서 서비스하는 DeepSeek v4.1 Flash 버전이 자체 양자화로 인해 공식 DeepSeek API 대비 속도가 느리고 품질이 현저히 떨어진다는 분석이 제기되었습니다.</li>
-<li>미모(MiMo)의 'MiMo-V2.6-Pro' 모델이 DeepSeek 대비 저렴한 가격과 뛰어난 토큰 효율성으로 가성비 면에서 긍정적인 평가를 받고 있습니다.</li>
-<li>Kimi K3.1 Pro는 긴 시간 단일 생성 작업을 유지할 수 있으며 가드레일이 적어 특정 작업 환경에서 대안으로 쓰이고 있습니다.</li>
-<li>GLM의 경우 차기 버전(GLM 5.5 등) 관련 소식이 11월경 전개될 것이라는 언급이 있습니다. (루머)</li>
-<li>Minimax H3 기반의 클래식 애니메이션 LoRA가 업데이트되어 이전보다 프롬프트 반영력이 개선되었다는 공유가 있었습니다.</li>
-</ul>
-<h3>5. 플랫폼 및 개발 도구 변경 사항</h3>
-<ul>
-<li>AI 플랫폼 z.ai에 폴더 정리 기능이 새롭게 도입되었으나, 기존 메시지 편집 옵션은 비활성화되었습니다.</li>
+<li>오픈소스 커뮤니티(r/opensource)에서 AI를 활용한 프로젝트의 게시를 전면 금지하는 규정이 적용되면서 번역 및 코딩 보조까지 배제하는 방침에 대해 사용자들의 비판이 이어졌습니다.</li>
+<li>거대 AI 연구소들의 연산 자원 및 HBM 독점으로 인해 일반 소비자용 RAM과 대용량 저장장치(SSD, HDD)의 공급 부족 및 가격 상승세가 장기화되고 있습니다.</li>
 </ul>
   </div>
   <div class="rule"></div>
   <p class="secttl">지난 요약</p>
   <ol class="past" id="past">
-    <li class="m" data-i="0"><a href="e/2026-10-25-morning.html"><span class="t">구글 및 주요 AI 모델 성능 저하 의혹과 관련 동향</span><span class="d">2026년 10월 25일 낮</span></a></li>
-    <li class="e" data-i="1"><a href="e/2026-10-24-evening.html"><span class="t">앤스로픽 키미 제미니 및 오픈아이 등 주요 인공지능 모델 최신 동향</span><span class="d">2026년 10월 24일 밤</span></a></li>
-    <li class="m" data-i="2"><a href="e/2026-10-24-morning.html"><span class="t">문샷AI 키미 신모델 출시와 주요 빅테크 AI 동향 요약</span><span class="d">2026년 10월 24일 낮</span></a></li>
-    <li class="e" data-i="3"><a href="e/2026-10-23-evening.html"><span class="t">클로드 차세대 모델 라우팅부터 앤트로픽과 구글 및 중국 AI 동향</span><span class="d">2026년 10월 23일 밤</span></a></li>
-    <li class="m" data-i="4"><a href="e/2026-10-23-morning.html"><span class="t">앤스로픽 구글 오픈소스 OpenAI 주요 인공지능 모델 동향</span><span class="d">2026년 10월 23일 낮</span></a></li>
-    <li class="e" data-i="5"><a href="e/2026-10-22-evening.html"><span class="t">신규 AI 모델 출시와 차기작 테스트 및 보안 취약점 동향</span><span class="d">2026년 10월 22일 밤</span></a></li>
-    <li class="m" data-i="6"><a href="e/2026-10-22-morning.html"><span class="t">오픈에이아이 보안 취약점 발견부터 주요 빅테크 AI 모델 동향까지</span><span class="d">2026년 10월 22일 낮</span></a></li>
-    <li class="e" data-i="7"><a href="e/2026-10-21-evening.html"><span class="t">앤스로픽 오픈AI 및 주요 AI 모델 최신 동향과 개발 소식 요약</span><span class="d">2026년 10월 21일 밤</span></a></li>
-    <li class="m" data-i="8"><a href="e/2026-10-21-morning.html"><span class="t">앤스로픽 오픈아이 구글의 차기 모델 유출 정황과 주요 AI 동향</span><span class="d">2026년 10월 21일 낮</span></a></li>
-    <li class="e" data-i="9"><a href="e/2026-10-20-evening.html"><span class="t">앤스로픽 오프엔에이 구글 주요 인공지능 모델 동향과 유출 소식 요약</span><span class="d">2026년 10월 20일 밤</span></a></li>
-    <li class="m" data-i="10"><a href="e/2026-10-20-morning.html"><span class="t">앤스로픽 차기 모델 유출 및 주요 AI 업계 동향 종합</span><span class="d">2026년 10월 20일 낮</span></a></li>
-    <li class="e" data-i="11"><a href="e/2026-10-19-evening.html"><span class="t">앤스로픽 공익 펀드 설립과 딥시크 성능 비교 및 AI 모델 동향</span><span class="d">2026년 10월 19일 밤</span></a></li>
-    <li class="m" data-i="12"><a href="e/2026-10-19-morning.html"><span class="t">클로드 오퍼스 독주 속 주요 AI 모델 동향 및 기술 발전</span><span class="d">2026년 10월 19일 낮</span></a></li>
-    <li class="e" data-i="13"><a href="e/2026-10-18-evening.html"><span class="t">차세대 AI 모델 동향과 GPU 하드웨어 대란 및 업계 소식</span><span class="d">2026년 10월 18일 밤</span></a></li>
-    <li class="m" data-i="14"><a href="e/2026-10-18-morning.html"><span class="t">딥시크 V4.1과 신규 모델 라우팅 테스트 등 최신 AI 동향 종합</span><span class="d">2026년 10월 18일 낮</span></a></li>
-    <li class="e" data-i="15"><a href="e/2026-10-17-evening.html"><span class="t">앤스로픽 구글 딥시크 최신 모델 동향과 인공지능 업계 주요 소식</span><span class="d">2026년 10월 17일 밤</span></a></li>
-    <li class="m" data-i="16"><a href="e/2026-10-17-morning.html"><span class="t">앤스로픽 구글 오픈AI 및 글로벌 AI 업계 최신 동향 요약</span><span class="d">2026년 10월 17일 낮</span></a></li>
-    <li class="e" data-i="17"><a href="e/2026-10-16-evening.html"><span class="t">구글 제미나이 4.0 아르곤 배포와 클로드 5.5 유출 등 주요 AI 동향</span><span class="d">2026년 10월 16일 밤</span></a></li>
-    <li class="m" data-i="18"><a href="e/2026-10-16-morning.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 빅테크 AI 모델 개발 및 출시 동향</span><span class="d">2026년 10월 16일 낮</span></a></li>
-    <li class="e" data-i="19"><a href="e/2026-10-15-evening.html"><span class="t">차세대 AI 모델 동향과 우주 데이터센터 및 개발 최적화 팁</span><span class="d">2026년 10월 15일 밤</span></a></li>
-    <li class="m" data-i="20"><a href="e/2026-10-15-morning.html"><span class="t">구글 아르곤 출시와 앤트로픽 차기작 루머 등 주요 AI 동향</span><span class="d">2026년 10월 15일 낮</span></a></li>
-    <li class="e" data-i="21"><a href="e/2026-10-14-evening.html"><span class="t">구글 제미나이 4 신모델 논란과 앤트로픽 클로드 독주 체제</span><span class="d">2026년 10월 14일 밤</span></a></li>
-    <li class="m" data-i="22"><a href="e/2026-10-14-morning.html"><span class="t">구글 제미나이 4 아르곤 고가 티어 선출시 논란과 업계 동향</span><span class="d">2026년 10월 14일 낮</span></a></li>
-    <li class="e" data-i="23"><a href="e/2026-10-13-evening.html"><span class="t">구글 제미니 4.0 출시 임박 및 주요 AI 모델 동향</span><span class="d">2026년 10월 13일 밤</span></a></li>
-    <li class="m" data-i="24"><a href="e/2026-10-13-morning.html"><span class="t">주요 AI 모델 출시 동향과 개발 트렌드 및 커뮤니티 소식</span><span class="d">2026년 10월 13일 낮</span></a></li>
-    <li class="e" data-i="25"><a href="e/2026-10-12-evening.html"><span class="t">최신 AI 모델 스텔스 테스트와 유출 소식 및 개발자 트렌드 요약</span><span class="d">2026년 10월 12일 밤</span></a></li>
-    <li class="m" data-i="26"><a href="e/2026-10-12-morning.html"><span class="t">주요 AI 모델 신규 테스트 동향 및 코딩 제작 활용 사례</span><span class="d">2026년 10월 12일 낮</span></a></li>
-    <li class="e" data-i="27"><a href="e/2026-10-11-evening.html"><span class="t">구글 제미나이와 클로드 신규 모델 찌라시 및 주요 AI 동향 요약</span><span class="d">2026년 10월 11일 밤</span></a></li>
-    <li class="m" data-i="28"><a href="e/2026-10-11-morning.html"><span class="t">오픈에이아이 구글 앤트로픽 주요 인공지능 모델 및 하드웨어 동향 요약</span><span class="d">2026년 10월 11일 낮</span></a></li>
-    <li class="e" data-i="29"><a href="e/2026-10-10-evening.html"><span class="t">주요 AI 기업 신모델 개발 동향 및 커뮤니티 소식 요약</span><span class="d">2026년 10월 10일 밤</span></a></li>
-    <li class="m" data-i="30"><a href="e/2026-10-10-morning.html"><span class="t">구글 제미나이 4와 앤트로픽 클로드 등 최신 AI 모델 출시 루머 및 기술 동향 요약</span><span class="d">2026년 10월 10일 낮</span></a></li>
-    <li class="e" data-i="31"><a href="e/2026-10-09-evening.html"><span class="t">앤스로픽 구글 오픈AI 등 주요 AI 모델 동향 및 업계 소식</span><span class="d">2026년 10월 9일 밤</span></a></li>
-    <li class="m" data-i="32"><a href="e/2026-10-09-morning.html"><span class="t">구글 제미나이 4 아르곤 출시 루머와 주요 AI 모델 최신 동향</span><span class="d">2026년 10월 9일 낮</span></a></li>
-    <li class="e" data-i="33"><a href="e/2026-10-08-evening.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 글로벌 AI 모델 성능 및 동향</span><span class="d">2026년 10월 8일 밤</span></a></li>
-    <li class="m" data-i="34"><a href="e/2026-10-08-morning.html"><span class="t">구글 제미나이 아르고과 앤트로픽 클로드 하이쿠 등 주요 AI 동향</span><span class="d">2026년 10월 8일 낮</span></a></li>
-    <li class="e" data-i="35"><a href="e/2026-10-07-evening.html"><span class="t">오픈아이유 수학 논문 대거 공개와 주요 인공지능 기업 동향</span><span class="d">2026년 10월 7일 밤</span></a></li>
-    <li class="m" data-i="36"><a href="e/2026-10-07-morning.html"><span class="t">구글 앤트로픽 오픈AI 미스트랄 주요 AI 모델 신제품 및 업계 동향 요약</span><span class="d">2026년 10월 7일 낮</span></a></li>
-    <li class="e" data-i="37"><a href="e/2026-10-06-evening.html"><span class="t">앤스로픽 오픈AI 구글의 주요 AI 모델 최신 동향과 산업 소식 요약</span><span class="d">2026년 10월 6일 밤</span></a></li>
-    <li class="m" data-i="38"><a href="e/2026-10-06-morning.html"><span class="t">구글 앤트로픽 오픈AI 주요 AI 모델 업데이트 및 시장 동향</span><span class="d">2026년 10월 6일 낮</span></a></li>
-    <li class="e" data-i="39"><a href="e/2026-10-05-evening.html"><span class="t">오픈에이아이 앤트로픽 구글의 주요 모델 출시 및 정책 동향</span><span class="d">2026년 10월 5일 밤</span></a></li>
-    <li class="m" data-i="40"><a href="e/2026-10-05-morning.html"><span class="t">주요 AI 모델 성능 비교와 신규 출시 루머 및 활용 동향</span><span class="d">2026년 10월 5일 낮</span></a></li>
-    <li class="e" data-i="41"><a href="e/2026-10-04-evening.html"><span class="t">앤트로픽과 오픈아이 등 주요 글로벌 인공지능 기업 최신 동향 요약</span><span class="d">2026년 10월 4일 밤</span></a></li>
-    <li class="m" data-i="42"><a href="e/2026-10-04-morning.html"><span class="t">앤스로픽과 구글 등 주요 AI 모델의 최신 동향 및 업데이트 소식</span><span class="d">2026년 10월 4일 낮</span></a></li>
-    <li class="e" data-i="43"><a href="e/2026-10-03-evening.html"><span class="t">주요 LLM 성능 비교와 구글 제미나이 요금제 개편 및 AI 업계 동향</span><span class="d">2026년 10월 3일 밤</span></a></li>
-    <li class="m" data-i="44"><a href="e/2026-10-03-morning.html"><span class="t">차세대 AI 모델 출시 임박과 바이브 코딩 트렌드 및 하드웨어 소식</span><span class="d">2026년 10월 3일 낮</span></a></li>
-    <li class="e" data-i="45"><a href="e/2026-10-02-evening.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 신규 모델 동향 및 성능 평가</span><span class="d">2026년 10월 2일 밤</span></a></li>
-    <li class="m" data-i="46"><a href="e/2026-10-02-morning.html"><span class="t">구글 제미나이 4 유출과 주요 AI 랩스 최신 동향 요약</span><span class="d">2026년 10월 2일 낮</span></a></li>
-    <li class="e" data-i="47"><a href="e/2026-10-01-evening.html"><span class="t">구글 제미나이 4 아곤 공개 및 주요 AI 모델 동향 요약</span><span class="d">2026년 10월 1일 밤</span></a></li>
-    <li class="m" data-i="48"><a href="e/2026-10-01-morning.html"><span class="t">2026년 하반기 주요 AI 모델 동향과 업계 판도 분석</span><span class="d">2026년 10월 1일 낮</span></a></li>
-    <li class="e" data-i="49"><a href="e/2026-09-30-evening.html"><span class="t">오픈에이전트 출시와 주요 AI 모델별 성능 및 요금 정책 동향</span><span class="d">2026년 9월 30일 밤</span></a></li>
-    <li class="m" data-i="50"><a href="e/2026-09-30-morning.html"><span class="t">오픈에이아이 신모델 공개와 구독제 개편 및 업계 반응</span><span class="d">2026년 9월 30일 낮</span></a></li>
-    <li class="e" data-i="51"><a href="e/2026-09-29-evening.html"><span class="t">오픈에이아이 신형 모델 출시 취소와 요금제 개편 논란 및 AI 업계 동향</span><span class="d">2026년 9월 29일 밤</span></a></li>
-    <li class="m" data-i="52"><a href="e/2026-09-29-morning.html"><span class="t">앤트로픽 클로드 5.5 기습 출시 및 주요 AI 기업 최신 동향 요약</span><span class="d">2026년 9월 29일 낮</span></a></li>
-    <li class="e" data-i="53"><a href="e/2026-09-28-evening.html"><span class="t">오픈에이아이 개발자 데이 전망과 앤스로픽 및 구글 주요 인공지능 모델 동향</span><span class="d">2026년 9월 28일 밤</span></a></li>
-    <li class="m" data-i="54"><a href="e/2026-09-28-morning.html"><span class="t">앤트로픽 오픈아이 구글의 신모델 출시 및 글로벌 AI 동향 요약</span><span class="d">2026년 9월 28일 낮</span></a></li>
-    <li class="e" data-i="55"><a href="e/2026-09-27-evening.html"><span class="t">앤스로픽 오퍼스 5.5 호평과 주요 AI 랩 신모델 출시 동향</span><span class="d">2026년 9월 27일 밤</span></a></li>
-    <li class="m" data-i="56"><a href="e/2026-09-27-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 기업의 차세대 모델 출시 및 생태계 동향 루머 요약</span><span class="d">2026년 9월 27일 낮</span></a></li>
-    <li class="e" data-i="57"><a href="e/2026-09-26-evening.html"><span class="t">주요 AI 모델 성능 동향과 멀티미디어 제작 및 플랫폼 이슈 요약</span><span class="d">2026년 9월 26일 밤</span></a></li>
-    <li class="m" data-i="58"><a href="e/2026-09-26-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 AI 기업 최신 모델 동향과 산업 전망</span><span class="d">2026년 9월 26일 낮</span></a></li>
-    <li class="e" data-i="59"><a href="e/2026-09-25-evening.html"><span class="t">오픈에이아이 앤스로픽 등 주요 인공지능 기업 최신 유출 및 모델 동향 요약</span><span class="d">2026년 9월 25일 밤</span></a></li>
-    <li class="m" data-i="60"><a href="e/2026-09-25-morning.html"><span class="t">앤스로픽 클로드 5.5 호평 속 주요 AI 모델 최신 동향</span><span class="d">2026년 9월 25일 낮</span></a></li>
-    <li class="e" data-i="61"><a href="e/2026-09-24-evening.html"><span class="t">앤트로픽 클로드 5.5 압도적 성능과 주요 빅테크 AI 모델 동향</span><span class="d">2026년 9월 24일 밤</span></a></li>
-    <li class="m" data-i="62"><a href="e/2026-09-24-morning.html"><span class="t">앤트로픽과 구글 및 오픈AI의 차세대 인공지능 모델 주요 동향</span><span class="d">2026년 9월 24일 낮</span></a></li>
-    <li class="e" data-i="63"><a href="e/2026-09-23-evening.html"><span class="t">앤스로픽 클로드 오푸스 5점 5 출시와 주요 인공지능 기업 동향</span><span class="d">2026년 9월 23일 밤</span></a></li>
-    <li class="m" data-i="64"><a href="e/2026-09-23-morning.html"><span class="t">앤트로픽 클로드 오퍼스 5.5 기습 출시와 오픈AI 및 구글 등 주요 AI 기업 동향</span><span class="d">2026년 9월 23일 낮</span></a></li>
-    <li class="e" data-i="65"><a href="e/2026-09-22-evening.html"><span class="t">주요 빅테크 기업 차세대 AI 모델 유출 정보 및 성능 평가 요약</span><span class="d">2026년 9월 22일 밤</span></a></li>
-    <li class="m" data-i="66"><a href="e/2026-09-22-morning.html"><span class="t">앤스로픽 오퍼스 5.5 출시 임박과 샤오미 미모 2.6 오픈소스 공개</span><span class="d">2026년 9월 22일 낮</span></a></li>
-    <li class="e" data-i="67"><a href="e/2026-09-21-evening.html"><span class="t">앤트로픽과 오픈아이의 차세대 모델 유출 및 주요 AI 동향 요약</span><span class="d">2026년 9월 21일 밤</span></a></li>
-    <li class="m" data-i="68"><a href="e/2026-09-21-morning.html"><span class="t">앤스로픽 오픈AI 구글 최신 AI 모델 유출 정보 및 성능 비교 동향</span><span class="d">2026년 9월 21일 낮</span></a></li>
-    <li class="e" data-i="69"><a href="e/2026-09-20-evening.html"><span class="t">앤스로픽 오픈아이 구글 및 중국계 주요 AI 모델 신제품 출시 동향 소식</span><span class="d">2026년 9월 20일 밤</span></a></li>
-    <li class="m" data-i="70"><a href="e/2026-09-20-morning.html"><span class="t">구글 앤트로픽 오픈AI 및 중국 진영의 차세대 AI 모델 주요 유출 소식</span><span class="d">2026년 9월 20일 낮</span></a></li>
-    <li class="e" data-i="71"><a href="e/2026-09-19-evening.html"><span class="t">앤스로픽 클로드 5점 2 및 구글 제미나이 4 시리즈 주요 AI 동향</span><span class="d">2026년 9월 19일 밤</span></a></li>
-    <li class="m" data-i="72"><a href="e/2026-09-19-morning.html"><span class="t">앤스로픽 신규 모델과 구글 및 중국계 주요 AI 최신 동향 요약</span><span class="d">2026년 9월 19일 낮</span></a></li>
-    <li class="e" data-i="73"><a href="e/2026-09-18-evening.html"><span class="t">주요 AI 모델 업데이트와 보안 이슈 및 개발 생태계 동향</span><span class="d">2026년 9월 18일 밤</span></a></li>
-    <li class="m" data-i="74"><a href="e/2026-09-18-morning.html"><span class="t">구글 제미나이 4 유출과 주요 글로벌 AI 랩의 차세대 모델 동향</span><span class="d">2026년 9월 18일 낮</span></a></li>
-    <li class="e" data-i="75"><a href="e/2026-09-17-evening.html"><span class="t">OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지</span><span class="d">2026년 9월 17일 밤</span></a></li>
-    <li class="m" data-i="76"><a href="e/2026-09-17-morning.html"><span class="t">OpenAI와 구글의 차세대 AI 모델 동향 및 중국계 루머 정리</span><span class="d">2026년 9월 17일 낮</span></a></li>
+    <li class="e" data-i="0"><a href="e/2026-10-25-evening.html"><span class="t">앤트로픽 오픈아이 구글 및 글로벌 오픈소스 AI 주요 동향 요약</span><span class="d">2026년 10월 25일 밤</span></a></li>
+    <li class="m" data-i="1"><a href="e/2026-10-25-morning.html"><span class="t">구글 및 주요 AI 모델 성능 저하 의혹과 관련 동향</span><span class="d">2026년 10월 25일 낮</span></a></li>
+    <li class="e" data-i="2"><a href="e/2026-10-24-evening.html"><span class="t">앤스로픽 키미 제미니 및 오픈아이 등 주요 인공지능 모델 최신 동향</span><span class="d">2026년 10월 24일 밤</span></a></li>
+    <li class="m" data-i="3"><a href="e/2026-10-24-morning.html"><span class="t">문샷AI 키미 신모델 출시와 주요 빅테크 AI 동향 요약</span><span class="d">2026년 10월 24일 낮</span></a></li>
+    <li class="e" data-i="4"><a href="e/2026-10-23-evening.html"><span class="t">클로드 차세대 모델 라우팅부터 앤트로픽과 구글 및 중국 AI 동향</span><span class="d">2026년 10월 23일 밤</span></a></li>
+    <li class="m" data-i="5"><a href="e/2026-10-23-morning.html"><span class="t">앤스로픽 구글 오픈소스 OpenAI 주요 인공지능 모델 동향</span><span class="d">2026년 10월 23일 낮</span></a></li>
+    <li class="e" data-i="6"><a href="e/2026-10-22-evening.html"><span class="t">신규 AI 모델 출시와 차기작 테스트 및 보안 취약점 동향</span><span class="d">2026년 10월 22일 밤</span></a></li>
+    <li class="m" data-i="7"><a href="e/2026-10-22-morning.html"><span class="t">오픈에이아이 보안 취약점 발견부터 주요 빅테크 AI 모델 동향까지</span><span class="d">2026년 10월 22일 낮</span></a></li>
+    <li class="e" data-i="8"><a href="e/2026-10-21-evening.html"><span class="t">앤스로픽 오픈AI 및 주요 AI 모델 최신 동향과 개발 소식 요약</span><span class="d">2026년 10월 21일 밤</span></a></li>
+    <li class="m" data-i="9"><a href="e/2026-10-21-morning.html"><span class="t">앤스로픽 오픈아이 구글의 차기 모델 유출 정황과 주요 AI 동향</span><span class="d">2026년 10월 21일 낮</span></a></li>
+    <li class="e" data-i="10"><a href="e/2026-10-20-evening.html"><span class="t">앤스로픽 오프엔에이 구글 주요 인공지능 모델 동향과 유출 소식 요약</span><span class="d">2026년 10월 20일 밤</span></a></li>
+    <li class="m" data-i="11"><a href="e/2026-10-20-morning.html"><span class="t">앤스로픽 차기 모델 유출 및 주요 AI 업계 동향 종합</span><span class="d">2026년 10월 20일 낮</span></a></li>
+    <li class="e" data-i="12"><a href="e/2026-10-19-evening.html"><span class="t">앤스로픽 공익 펀드 설립과 딥시크 성능 비교 및 AI 모델 동향</span><span class="d">2026년 10월 19일 밤</span></a></li>
+    <li class="m" data-i="13"><a href="e/2026-10-19-morning.html"><span class="t">클로드 오퍼스 독주 속 주요 AI 모델 동향 및 기술 발전</span><span class="d">2026년 10월 19일 낮</span></a></li>
+    <li class="e" data-i="14"><a href="e/2026-10-18-evening.html"><span class="t">차세대 AI 모델 동향과 GPU 하드웨어 대란 및 업계 소식</span><span class="d">2026년 10월 18일 밤</span></a></li>
+    <li class="m" data-i="15"><a href="e/2026-10-18-morning.html"><span class="t">딥시크 V4.1과 신규 모델 라우팅 테스트 등 최신 AI 동향 종합</span><span class="d">2026년 10월 18일 낮</span></a></li>
+    <li class="e" data-i="16"><a href="e/2026-10-17-evening.html"><span class="t">앤스로픽 구글 딥시크 최신 모델 동향과 인공지능 업계 주요 소식</span><span class="d">2026년 10월 17일 밤</span></a></li>
+    <li class="m" data-i="17"><a href="e/2026-10-17-morning.html"><span class="t">앤스로픽 구글 오픈AI 및 글로벌 AI 업계 최신 동향 요약</span><span class="d">2026년 10월 17일 낮</span></a></li>
+    <li class="e" data-i="18"><a href="e/2026-10-16-evening.html"><span class="t">구글 제미나이 4.0 아르곤 배포와 클로드 5.5 유출 등 주요 AI 동향</span><span class="d">2026년 10월 16일 밤</span></a></li>
+    <li class="m" data-i="19"><a href="e/2026-10-16-morning.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 빅테크 AI 모델 개발 및 출시 동향</span><span class="d">2026년 10월 16일 낮</span></a></li>
+    <li class="e" data-i="20"><a href="e/2026-10-15-evening.html"><span class="t">차세대 AI 모델 동향과 우주 데이터센터 및 개발 최적화 팁</span><span class="d">2026년 10월 15일 밤</span></a></li>
+    <li class="m" data-i="21"><a href="e/2026-10-15-morning.html"><span class="t">구글 아르곤 출시와 앤트로픽 차기작 루머 등 주요 AI 동향</span><span class="d">2026년 10월 15일 낮</span></a></li>
+    <li class="e" data-i="22"><a href="e/2026-10-14-evening.html"><span class="t">구글 제미나이 4 신모델 논란과 앤트로픽 클로드 독주 체제</span><span class="d">2026년 10월 14일 밤</span></a></li>
+    <li class="m" data-i="23"><a href="e/2026-10-14-morning.html"><span class="t">구글 제미나이 4 아르곤 고가 티어 선출시 논란과 업계 동향</span><span class="d">2026년 10월 14일 낮</span></a></li>
+    <li class="e" data-i="24"><a href="e/2026-10-13-evening.html"><span class="t">구글 제미니 4.0 출시 임박 및 주요 AI 모델 동향</span><span class="d">2026년 10월 13일 밤</span></a></li>
+    <li class="m" data-i="25"><a href="e/2026-10-13-morning.html"><span class="t">주요 AI 모델 출시 동향과 개발 트렌드 및 커뮤니티 소식</span><span class="d">2026년 10월 13일 낮</span></a></li>
+    <li class="e" data-i="26"><a href="e/2026-10-12-evening.html"><span class="t">최신 AI 모델 스텔스 테스트와 유출 소식 및 개발자 트렌드 요약</span><span class="d">2026년 10월 12일 밤</span></a></li>
+    <li class="m" data-i="27"><a href="e/2026-10-12-morning.html"><span class="t">주요 AI 모델 신규 테스트 동향 및 코딩 제작 활용 사례</span><span class="d">2026년 10월 12일 낮</span></a></li>
+    <li class="e" data-i="28"><a href="e/2026-10-11-evening.html"><span class="t">구글 제미나이와 클로드 신규 모델 찌라시 및 주요 AI 동향 요약</span><span class="d">2026년 10월 11일 밤</span></a></li>
+    <li class="m" data-i="29"><a href="e/2026-10-11-morning.html"><span class="t">오픈에이아이 구글 앤트로픽 주요 인공지능 모델 및 하드웨어 동향 요약</span><span class="d">2026년 10월 11일 낮</span></a></li>
+    <li class="e" data-i="30"><a href="e/2026-10-10-evening.html"><span class="t">주요 AI 기업 신모델 개발 동향 및 커뮤니티 소식 요약</span><span class="d">2026년 10월 10일 밤</span></a></li>
+    <li class="m" data-i="31"><a href="e/2026-10-10-morning.html"><span class="t">구글 제미나이 4와 앤트로픽 클로드 등 최신 AI 모델 출시 루머 및 기술 동향 요약</span><span class="d">2026년 10월 10일 낮</span></a></li>
+    <li class="e" data-i="32"><a href="e/2026-10-09-evening.html"><span class="t">앤스로픽 구글 오픈AI 등 주요 AI 모델 동향 및 업계 소식</span><span class="d">2026년 10월 9일 밤</span></a></li>
+    <li class="m" data-i="33"><a href="e/2026-10-09-morning.html"><span class="t">구글 제미나이 4 아르곤 출시 루머와 주요 AI 모델 최신 동향</span><span class="d">2026년 10월 9일 낮</span></a></li>
+    <li class="e" data-i="34"><a href="e/2026-10-08-evening.html"><span class="t">앤스로픽 오픈AI 구글 등 주요 글로벌 AI 모델 성능 및 동향</span><span class="d">2026년 10월 8일 밤</span></a></li>
+    <li class="m" data-i="35"><a href="e/2026-10-08-morning.html"><span class="t">구글 제미나이 아르고과 앤트로픽 클로드 하이쿠 등 주요 AI 동향</span><span class="d">2026년 10월 8일 낮</span></a></li>
+    <li class="e" data-i="36"><a href="e/2026-10-07-evening.html"><span class="t">오픈아이유 수학 논문 대거 공개와 주요 인공지능 기업 동향</span><span class="d">2026년 10월 7일 밤</span></a></li>
+    <li class="m" data-i="37"><a href="e/2026-10-07-morning.html"><span class="t">구글 앤트로픽 오픈AI 미스트랄 주요 AI 모델 신제품 및 업계 동향 요약</span><span class="d">2026년 10월 7일 낮</span></a></li>
+    <li class="e" data-i="38"><a href="e/2026-10-06-evening.html"><span class="t">앤스로픽 오픈AI 구글의 주요 AI 모델 최신 동향과 산업 소식 요약</span><span class="d">2026년 10월 6일 밤</span></a></li>
+    <li class="m" data-i="39"><a href="e/2026-10-06-morning.html"><span class="t">구글 앤트로픽 오픈AI 주요 AI 모델 업데이트 및 시장 동향</span><span class="d">2026년 10월 6일 낮</span></a></li>
+    <li class="e" data-i="40"><a href="e/2026-10-05-evening.html"><span class="t">오픈에이아이 앤트로픽 구글의 주요 모델 출시 및 정책 동향</span><span class="d">2026년 10월 5일 밤</span></a></li>
+    <li class="m" data-i="41"><a href="e/2026-10-05-morning.html"><span class="t">주요 AI 모델 성능 비교와 신규 출시 루머 및 활용 동향</span><span class="d">2026년 10월 5일 낮</span></a></li>
+    <li class="e" data-i="42"><a href="e/2026-10-04-evening.html"><span class="t">앤트로픽과 오픈아이 등 주요 글로벌 인공지능 기업 최신 동향 요약</span><span class="d">2026년 10월 4일 밤</span></a></li>
+    <li class="m" data-i="43"><a href="e/2026-10-04-morning.html"><span class="t">앤스로픽과 구글 등 주요 AI 모델의 최신 동향 및 업데이트 소식</span><span class="d">2026년 10월 4일 낮</span></a></li>
+    <li class="e" data-i="44"><a href="e/2026-10-03-evening.html"><span class="t">주요 LLM 성능 비교와 구글 제미나이 요금제 개편 및 AI 업계 동향</span><span class="d">2026년 10월 3일 밤</span></a></li>
+    <li class="m" data-i="45"><a href="e/2026-10-03-morning.html"><span class="t">차세대 AI 모델 출시 임박과 바이브 코딩 트렌드 및 하드웨어 소식</span><span class="d">2026년 10월 3일 낮</span></a></li>
+    <li class="e" data-i="46"><a href="e/2026-10-02-evening.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 신규 모델 동향 및 성능 평가</span><span class="d">2026년 10월 2일 밤</span></a></li>
+    <li class="m" data-i="47"><a href="e/2026-10-02-morning.html"><span class="t">구글 제미나이 4 유출과 주요 AI 랩스 최신 동향 요약</span><span class="d">2026년 10월 2일 낮</span></a></li>
+    <li class="e" data-i="48"><a href="e/2026-10-01-evening.html"><span class="t">구글 제미나이 4 아곤 공개 및 주요 AI 모델 동향 요약</span><span class="d">2026년 10월 1일 밤</span></a></li>
+    <li class="m" data-i="49"><a href="e/2026-10-01-morning.html"><span class="t">2026년 하반기 주요 AI 모델 동향과 업계 판도 분석</span><span class="d">2026년 10월 1일 낮</span></a></li>
+    <li class="e" data-i="50"><a href="e/2026-09-30-evening.html"><span class="t">오픈에이전트 출시와 주요 AI 모델별 성능 및 요금 정책 동향</span><span class="d">2026년 9월 30일 밤</span></a></li>
+    <li class="m" data-i="51"><a href="e/2026-09-30-morning.html"><span class="t">오픈에이아이 신모델 공개와 구독제 개편 및 업계 반응</span><span class="d">2026년 9월 30일 낮</span></a></li>
+    <li class="e" data-i="52"><a href="e/2026-09-29-evening.html"><span class="t">오픈에이아이 신형 모델 출시 취소와 요금제 개편 논란 및 AI 업계 동향</span><span class="d">2026년 9월 29일 밤</span></a></li>
+    <li class="m" data-i="53"><a href="e/2026-09-29-morning.html"><span class="t">앤트로픽 클로드 5.5 기습 출시 및 주요 AI 기업 최신 동향 요약</span><span class="d">2026년 9월 29일 낮</span></a></li>
+    <li class="e" data-i="54"><a href="e/2026-09-28-evening.html"><span class="t">오픈에이아이 개발자 데이 전망과 앤스로픽 및 구글 주요 인공지능 모델 동향</span><span class="d">2026년 9월 28일 밤</span></a></li>
+    <li class="m" data-i="55"><a href="e/2026-09-28-morning.html"><span class="t">앤트로픽 오픈아이 구글의 신모델 출시 및 글로벌 AI 동향 요약</span><span class="d">2026년 9월 28일 낮</span></a></li>
+    <li class="e" data-i="56"><a href="e/2026-09-27-evening.html"><span class="t">앤스로픽 오퍼스 5.5 호평과 주요 AI 랩 신모델 출시 동향</span><span class="d">2026년 9월 27일 밤</span></a></li>
+    <li class="m" data-i="57"><a href="e/2026-09-27-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 인공지능 기업의 차세대 모델 출시 및 생태계 동향 루머 요약</span><span class="d">2026년 9월 27일 낮</span></a></li>
+    <li class="e" data-i="58"><a href="e/2026-09-26-evening.html"><span class="t">주요 AI 모델 성능 동향과 멀티미디어 제작 및 플랫폼 이슈 요약</span><span class="d">2026년 9월 26일 밤</span></a></li>
+    <li class="m" data-i="59"><a href="e/2026-09-26-morning.html"><span class="t">앤스로픽 오픈아이 구글 등 주요 AI 기업 최신 모델 동향과 산업 전망</span><span class="d">2026년 9월 26일 낮</span></a></li>
+    <li class="e" data-i="60"><a href="e/2026-09-25-evening.html"><span class="t">오픈에이아이 앤스로픽 등 주요 인공지능 기업 최신 유출 및 모델 동향 요약</span><span class="d">2026년 9월 25일 밤</span></a></li>
+    <li class="m" data-i="61"><a href="e/2026-09-25-morning.html"><span class="t">앤스로픽 클로드 5.5 호평 속 주요 AI 모델 최신 동향</span><span class="d">2026년 9월 25일 낮</span></a></li>
+    <li class="e" data-i="62"><a href="e/2026-09-24-evening.html"><span class="t">앤트로픽 클로드 5.5 압도적 성능과 주요 빅테크 AI 모델 동향</span><span class="d">2026년 9월 24일 밤</span></a></li>
+    <li class="m" data-i="63"><a href="e/2026-09-24-morning.html"><span class="t">앤트로픽과 구글 및 오픈AI의 차세대 인공지능 모델 주요 동향</span><span class="d">2026년 9월 24일 낮</span></a></li>
+    <li class="e" data-i="64"><a href="e/2026-09-23-evening.html"><span class="t">앤스로픽 클로드 오푸스 5점 5 출시와 주요 인공지능 기업 동향</span><span class="d">2026년 9월 23일 밤</span></a></li>
+    <li class="m" data-i="65"><a href="e/2026-09-23-morning.html"><span class="t">앤트로픽 클로드 오퍼스 5.5 기습 출시와 오픈AI 및 구글 등 주요 AI 기업 동향</span><span class="d">2026년 9월 23일 낮</span></a></li>
+    <li class="e" data-i="66"><a href="e/2026-09-22-evening.html"><span class="t">주요 빅테크 기업 차세대 AI 모델 유출 정보 및 성능 평가 요약</span><span class="d">2026년 9월 22일 밤</span></a></li>
+    <li class="m" data-i="67"><a href="e/2026-09-22-morning.html"><span class="t">앤스로픽 오퍼스 5.5 출시 임박과 샤오미 미모 2.6 오픈소스 공개</span><span class="d">2026년 9월 22일 낮</span></a></li>
+    <li class="e" data-i="68"><a href="e/2026-09-21-evening.html"><span class="t">앤트로픽과 오픈아이의 차세대 모델 유출 및 주요 AI 동향 요약</span><span class="d">2026년 9월 21일 밤</span></a></li>
+    <li class="m" data-i="69"><a href="e/2026-09-21-morning.html"><span class="t">앤스로픽 오픈AI 구글 최신 AI 모델 유출 정보 및 성능 비교 동향</span><span class="d">2026년 9월 21일 낮</span></a></li>
+    <li class="e" data-i="70"><a href="e/2026-09-20-evening.html"><span class="t">앤스로픽 오픈아이 구글 및 중국계 주요 AI 모델 신제품 출시 동향 소식</span><span class="d">2026년 9월 20일 밤</span></a></li>
+    <li class="m" data-i="71"><a href="e/2026-09-20-morning.html"><span class="t">구글 앤트로픽 오픈AI 및 중국 진영의 차세대 AI 모델 주요 유출 소식</span><span class="d">2026년 9월 20일 낮</span></a></li>
+    <li class="e" data-i="72"><a href="e/2026-09-19-evening.html"><span class="t">앤스로픽 클로드 5점 2 및 구글 제미나이 4 시리즈 주요 AI 동향</span><span class="d">2026년 9월 19일 밤</span></a></li>
+    <li class="m" data-i="73"><a href="e/2026-09-19-morning.html"><span class="t">앤스로픽 신규 모델과 구글 및 중국계 주요 AI 최신 동향 요약</span><span class="d">2026년 9월 19일 낮</span></a></li>
+    <li class="e" data-i="74"><a href="e/2026-09-18-evening.html"><span class="t">주요 AI 모델 업데이트와 보안 이슈 및 개발 생태계 동향</span><span class="d">2026년 9월 18일 밤</span></a></li>
+    <li class="m" data-i="75"><a href="e/2026-09-18-morning.html"><span class="t">구글 제미나이 4 유출과 주요 글로벌 AI 랩의 차세대 모델 동향</span><span class="d">2026년 9월 18일 낮</span></a></li>
+    <li class="e" data-i="76"><a href="e/2026-09-17-evening.html"><span class="t">OpenAI 요금제 개편부터 주요 빅테크 신규 AI 모델 동향까지</span><span class="d">2026년 9월 17일 밤</span></a></li>
+    <li class="m" data-i="77"><a href="e/2026-09-17-morning.html"><span class="t">OpenAI와 구글의 차세대 AI 모델 동향 및 중국계 루머 정리</span><span class="d">2026년 9월 17일 낮</span></a></li>
   </ol>
   <nav class="pager" id="pager" hidden></nav>
-  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>2026년 10월 25일 밤 · 최신 호 · 빌드 2026-10-25 18:57</span></div>
+  <div class="foot"><span>네온 두부 / Neon Tofu</span><span>2026년 10월 26일 낮 · 최신 호 · 빌드 2026-10-26 06:56</span></div>
 </div>
 <script>
 (function () {
