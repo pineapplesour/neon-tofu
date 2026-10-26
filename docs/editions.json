@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-27",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-27T06:55:01.406624+09:00",
+    "window_start": "2026-10-26T18:05:02.091225+09:00",
+    "window_end": "2026-10-27T06:05:02.091225+09:00",
+    "title": "오픈에이아이 앤스로픽 신규 모델 발표 및 글로벌 기업 동향",
+    "chars": 1490,
+    "source_chars": 240334,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-26",
     "slot": "evening",
     "slot_label": "석간",
