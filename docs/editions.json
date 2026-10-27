@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-28",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-10-28T06:55:01.581682+09:00",
+    "window_start": "2026-10-27T18:05:02.142598+09:00",
+    "window_end": "2026-10-28T06:05:02.142598+09:00",
+    "title": "구글 딥마인드와 오픈에이아이 등 주요 AI 기업 신규 모델 및 벤치마크 동향",
+    "chars": 2033,
+    "source_chars": 179343,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-10-27",
     "slot": "evening",
     "slot_label": "석간",
