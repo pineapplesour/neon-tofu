@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-28",
+  "slot": "evening",
+  "slot_label": "석간",
+  "published_at": "2026-10-28T18:55:02.024562+09:00",
+  "window_start": "2026-10-28T06:05:01.656993+09:00",
+  "window_end": "2026-10-28T18:05:01.656993+09:00",
+  "title": "오픈AI 알파 모델 유출부터 수학 벤치마크 결과까지 주요 AI 동향",
+  "body": "이것만 봐도 배부른 알짜배기만 모았습니다. ## 1. OpenAI 내부 알파 모델 유출 및 칩 인프라 동향 - OpenAI의 내부 스테이징 및 알파 단계 모델 8종(`halo-alpha`, `joule-alpha`, `kindle-alpha`, `lumen-alpha`, `mercury-alpha`, `nova-alpha`, `opal-alpha`, `vega-alpha`)이 새롭게 감지되었습니다. - 이 중 `vega-alpha`는 과거 `GPT-6 Astra`의 개발 코드명이었던 것으로 알려졌습니다 (한 유저 주장). - 로이터 등 외신 보도를 인용하여 OpenAI가 구글의 AI 칩(TPU)을 구매 또는 임대할 계획을 세우고 있다는 소식이 전해졌습니다. ## 2. Epoch AI 'FrontierMath Tier 4 (v2)' 벤치마크 공개 - Epoch AI가 발표한 수학 고난도 벤치마크 FrontierMath Tier 4 (v2)의 결과가 공유되었습니다. - GPT-6.1 Sol(max)이 100.0%로 1위를 기록했습니다. - GPT-6 Astra(medium/high/xhigh/max)가 97.6%로 그 뒤를 이었습니다. - Claude Opus 5.5(max)는 95.0%를 기록했습니다. - 이어 GPT-6.1 Terra(max) 92.7%, Claude Fable 5(max) 90.2%, GPT-6 Sol(max) 90.0%, Claude Fable 5.1(max) 87.8% 순으로 집계되었습니다. - Gemini 4 Argon(high)과 GPT-5.5 Pro(xhigh)는 각각 78.0%를 기록했습니다. ## 3. Artificial Analysis v5 개편 및 평가 논란 - Artificial Analysis(AA)의 인덱스가 v5로 개편되었습니다. - 신규 평가 체계에는 FrontierCode 2.0, Critpt v2, HLE Diamond, Terminal Bench Science, Omniscience, GDP-PDF 등의 벤치마크가 적용되었습니다. - 개편된 v5 순위에서 Astra, Terra, Gemini 및 Muse Wonder Full이 Claude Fable 5.1보다 높게 배치되면서 평가 방식의 적절성에 대해 AI 커뮤니티 내 의견이 엇갈리고 있습니다. - FrontierCode 2.0 등 신규 지표에서 코드베이스 탐색 능력이 높은 모델들이 유리하게 작용한 것이 순위 변동의 원인이라는 분석이 제기되었습니다 (한 유저 주장). ## 4. 앤트로픽 Claude Fable 5.5 출시 일정 및 성능 루머 - Claude Fable 5.5의 출시 시점을 두고 당일 공개설부터 11월 중순 출시설까지 다양한 추측이 오가고 있습니다 (루머). - 유출된 단일 벤치마크 테스트 기준으로 Fable 5.5(high)가 Opus 5.5(max)보다 소폭 높은 성능을 보였으나, 가격이 약 3.6배 높게 책정될 수 있다는 주장이 제기되었습니다 (한 유저 주장). ## 5. 서비스 정책 변경 및 오픈 모델 소식 - 일부 유료 AI 구독 서비스의 사용량 한도가 축소될 예정이며, 이를 보완하기 위해 임시 사용량 리셋이 불규칙하게 진행되고 있다는 보고가 있었습니다 (한 유저 주장). - OpenRouter에 `Mammoth-1` 무료 모델이 등록되어 제공되기 시작했습니다. - Hugging Face에 `Qwen3.5-9B-Evil-Q6_K-GGUF` 모델이 업로드되어 공유되었습니다.",
+  "chars": 1703,
+  "source_chars": 89442,
+  "title_method": "llm",
+  "brand": "네온 두부"
+}
