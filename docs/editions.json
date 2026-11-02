@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-02",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-02T18:55:02.101506+09:00",
+    "window_start": "2026-11-02T06:05:01.756329+09:00",
+    "window_end": "2026-11-02T18:05:01.756329+09:00",
+    "title": "주요 AI 개발사 미공개 모델 유출 소문 및 벤치마크 동향 요약",
+    "chars": 2170,
+    "source_chars": 175702,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-02",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-02T06:55:02.123328+09:00",
