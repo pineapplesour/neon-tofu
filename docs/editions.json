@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-05",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-05T06:55:01.161001+09:00",
+    "window_start": "2026-11-04T18:05:01.503006+09:00",
+    "window_end": "2026-11-05T06:05:01.503006+09:00",
+    "title": "국내외 주요 AI 모델 출시 전망과 성능 및 인프라 동향 요약",
+    "chars": 1654,
+    "source_chars": 208071,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-04",
     "slot": "evening",
     "slot_label": "석간",
