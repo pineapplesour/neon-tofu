@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-06",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-06T06:55:01.942039+09:00",
+    "window_start": "2026-11-05T18:05:01.533271+09:00",
+    "window_end": "2026-11-06T06:05:01.533271+09:00",
+    "title": "주요 AI 모델 업데이트와 벤치마크 및 산업 동향 요약",
+    "chars": 3078,
+    "source_chars": 277353,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-05",
     "slot": "evening",
     "slot_label": "석간",
