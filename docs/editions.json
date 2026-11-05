@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-05",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-05T18:55:01.354619+09:00",
+    "window_start": "2026-11-05T06:05:01.786485+09:00",
+    "window_end": "2026-11-05T18:05:01.786485+09:00",
+    "title": "OpenAI 신규 모델 발표와 업계 유출 소식 및 주요 AI 동향",
+    "chars": 1357,
+    "source_chars": 186058,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-05",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-05T06:55:01.161001+09:00",
