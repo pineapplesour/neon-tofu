@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-09",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-09T06:55:01.767603+09:00",
+    "window_start": "2026-11-08T18:05:01.543360+09:00",
+    "window_end": "2026-11-09T06:05:01.543360+09:00",
+    "title": "주요 AI 모델 미출시 버전 유출 및 차기작 테스트 동향 정리",
+    "chars": 1013,
+    "source_chars": 218185,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-08",
     "slot": "evening",
     "slot_label": "석간",
