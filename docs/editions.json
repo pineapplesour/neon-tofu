@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-08",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-08T18:55:01.205977+09:00",
+    "window_start": "2026-11-08T06:05:01.742242+09:00",
+    "window_end": "2026-11-08T18:05:01.742242+09:00",
+    "title": "주요 AI 모델 성능 경쟁과 차세대 기술 개발 동향 요약",
+    "chars": 1108,
+    "source_chars": 236389,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-08",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-08T06:55:01.351704+09:00",
