@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-09",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-09T18:55:01.495582+09:00",
+    "window_start": "2026-11-09T06:05:01.804830+09:00",
+    "window_end": "2026-11-09T18:05:01.804830+09:00",
+    "title": "차세대 AI 모델 동향과 오픈소스 및 로보틱스 소식 총정리",
+    "chars": 1273,
+    "source_chars": 135672,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-09",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-09T06:55:01.767603+09:00",
