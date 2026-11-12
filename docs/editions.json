@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-13",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-13T06:55:01.887494+09:00",
+    "window_start": "2026-11-12T18:05:01.906322+09:00",
+    "window_end": "2026-11-13T06:05:01.906322+09:00",
+    "title": "구글 제미나이 4 배포와 엔비디아 젠슨 황 사임 및 주요 AI 동향",
+    "chars": 1535,
+    "source_chars": 338215,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-12",
     "slot": "evening",
     "slot_label": "석간",
