@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-15",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-15T06:55:02.048893+09:00",
+    "window_start": "2026-11-14T18:05:01.596162+09:00",
+    "window_end": "2026-11-15T06:05:01.596162+09:00",
+    "title": "구글 제미나이 4 및 오픈AI GPT 6.2 신규 모델 동향과 주요 AI 업계 소식",
+    "chars": 1693,
+    "source_chars": 128010,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-14",
     "slot": "evening",
     "slot_label": "석간",
