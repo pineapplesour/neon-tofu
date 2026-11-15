@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-15",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-15T18:55:01.406860+09:00",
+    "window_start": "2026-11-15T06:05:01.913590+09:00",
+    "window_end": "2026-11-15T18:05:01.913590+09:00",
+    "title": "앤스로픽 구글 AI 모델 업데이트와 이미지 비디오 생성 툴 동향",
+    "chars": 1672,
+    "source_chars": 104812,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-15",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-15T06:55:02.048893+09:00",
