@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-18",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-18T06:55:01.203785+09:00",
+    "window_start": "2026-11-17T18:05:01.529589+09:00",
+    "window_end": "2026-11-18T06:05:01.529589+09:00",
+    "title": "오픈에이아이 지피티 6점 2 아스트라 및 신규 인공지능 모델 출시와 루머 동향",
+    "chars": 3309,
+    "source_chars": 269096,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-17",
     "slot": "evening",
     "slot_label": "석간",
