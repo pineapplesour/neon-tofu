@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-19",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-19T06:55:01.405584+09:00",
+    "window_start": "2026-11-18T18:05:02.156179+09:00",
+    "window_end": "2026-11-19T06:05:02.156179+09:00",
+    "title": "구글 제미나이 4 네온 출시 및 주요 AI 모델 동향",
+    "chars": 1197,
+    "source_chars": 246055,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-18",
     "slot": "evening",
     "slot_label": "석간",
