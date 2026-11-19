@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-19",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-19T18:55:01.465586+09:00",
+    "window_start": "2026-11-19T06:05:01.567281+09:00",
+    "window_end": "2026-11-19T18:05:01.567281+09:00",
+    "title": "구글 Gemini 4 Neon 출시 및 앤트로픽 IPO 추진 동향",
+    "chars": 1512,
+    "source_chars": 218926,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-19",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-19T06:55:01.405584+09:00",
