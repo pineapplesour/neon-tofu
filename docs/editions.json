@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-24",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-24T18:55:01.775410+09:00",
+    "window_start": "2026-11-24T06:05:01.643821+09:00",
+    "window_end": "2026-11-24T18:05:01.643821+09:00",
+    "title": "구글 오픈아이 앤트로픽 및 오픈소스 생태계 주요 AI 동향",
+    "chars": 1640,
+    "source_chars": 170373,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-24",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-24T06:55:01.799172+09:00",
