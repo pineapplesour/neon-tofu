@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-27",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-27T06:55:01.415668+09:00",
+    "window_start": "2026-11-26T18:05:02.063107+09:00",
+    "window_end": "2026-11-27T06:05:02.063107+09:00",
+    "title": "앤트로픽과 구글의 차세대 AI 모델 루머 및 커뮤니티 활용 동향",
+    "chars": 1423,
+    "source_chars": 187979,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-26",
     "slot": "evening",
     "slot_label": "석간",
