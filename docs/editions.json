@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-28",
+    "slot": "morning",
+    "slot_label": "조간",
+    "published_at": "2026-11-28T06:55:01.633617+09:00",
+    "window_start": "2026-11-27T18:05:01.528545+09:00",
+    "window_end": "2026-11-28T06:05:01.528545+09:00",
+    "title": "앤스로픽 차세대 클로드 모델 테스트 유출 및 구글 제미나이 업계 동향",
+    "chars": 1119,
+    "source_chars": 196155,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
     "date": "2026-11-27",
     "slot": "evening",
     "slot_label": "석간",
