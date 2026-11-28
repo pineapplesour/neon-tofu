@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-11-28",
+    "slot": "evening",
+    "slot_label": "석간",
+    "published_at": "2026-11-28T18:55:02.062072+09:00",
+    "window_start": "2026-11-28T06:05:02.014242+09:00",
+    "window_end": "2026-11-28T18:05:02.014242+09:00",
+    "title": "앤스로픽과 구글의 차세대 AI 모델 테스트 및 성능 유출 동향",
+    "chars": 1350,
+    "source_chars": 116467,
+    "title_method": "llm",
+    "brand": "네온 두부"
+  },
+  {
+    "date": "2026-11-28",
     "slot": "morning",
     "slot_label": "조간",
     "published_at": "2026-11-28T06:55:01.633617+09:00",
